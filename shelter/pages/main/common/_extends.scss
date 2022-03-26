@@ -21,3 +21,33 @@
   font-style: italic;
   font-weight: 400;
 }
+
+%fz-h1 {
+  font-size: 35px;
+  line-height: 35px;
+}
+
+%fz-h2 {
+  font-size: 44px;
+  line-height: 57px;
+}
+
+%fz-h3 {
+  font-size: 35px;
+  line-height: 46px;
+}
+
+%fz-text {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+%fz-small-text {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+%fz-button {
+  font-size: 17px;
+  line-height: 22px;
+}

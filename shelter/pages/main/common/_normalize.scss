@@ -117,7 +117,7 @@ textarea {
 // Addresses margins handled incorrectly in IE6/7
 
 body {
-    margin: 0;
+    margin: 0 auto;
 }
 
 // =============================================================================
@@ -157,8 +157,8 @@ a {
 
 @if $normalize_headings == true {
     h1 {
-        font-size: $h1_font_size;
-        margin: $h1_margin;
+      font-size: $h1_font_size;
+      margin: $h1_margin;
     }
 
     h2 {
