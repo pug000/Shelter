@@ -82,16 +82,17 @@ html {
         z-index: -1;
         height: 908px;
       }
+    }
 
-      &__content {
-        display: flex;
-        justify-content: space-evenly;
-      }
+    .not-only-content {
+      display: flex;
+      justify-content: space-evenly;
     }
 
     .not-only-container {
       display: flex;
       align-items: center;
+
       &__inner {
         max-width: 460px;
         display: inline-flex;
@@ -148,7 +149,7 @@ html {
       flex-direction: column;
       margin-bottom: 76px;
 
-      &__content {
+      &-content {
         display: flex;
         justify-content: center;
         gap: 120px;
@@ -159,6 +160,7 @@ html {
         display: flex;
       }
     }
+
     .about-container {
       padding-top: 13px;
       &__inner {
@@ -166,15 +168,6 @@ html {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-      }
-
-      &__title {
-        @extend %ff-Georgia-Regular;
-        @extend %fz-h3;
-        color: $color-dark-l;
-        margin: 0;
-        padding-right: 125px;
-        letter-spacing: 1px;
       }
 
       &__text {
@@ -185,20 +178,28 @@ html {
       }
     }
 
+    .container__title {
+      @extend %ff-Georgia-Regular;
+      @extend %fz-h3;
+      color: $color-dark-l;
+      margin: 0;
+      padding-right: 125px;
+      letter-spacing: 1px;
+    }
+
     .our-friends {
-      padding-top: 42px;
-      margin-bottom: 100px;
+      margin-bottom: 58px;
 
       &__backgroud {
         background-color: $color-light-l;
-        height: 835px;
+        height: 877px;
         position: absolute;
         left: 0;
         right: 0;
         z-index: -1;
       }
 
-      .our-friends-content {
+      &-content {
         display: flex;
         flex-direction: column;
 
@@ -306,9 +307,10 @@ html {
 
       &__pets-name {
         @extend %ff-Georgia-Regular;
-        @extend %fz-large-text;
+        @extend %fz-h4;
         color: $color-dark-l;
         letter-spacing: 1px;
+        margin: 0;
       }
 
       &__button {
@@ -338,74 +340,156 @@ html {
       align-items: center;
       text-align: center;
       letter-spacing: 1px;
+      margin-top: 0;
       margin-bottom: 57px;
+      padding-top: 79px;
     }
 
     .help {
-      margin-bottom: 100px;
-    }
+      margin-bottom: 99px;
 
-    .help-content {
-      padding-top: 42px;
-    }
-
-    .help-wrapper {
-      &__items {
-        display: flex;
-        padding-left: 67px;
-        padding-right: 67px;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 55px 122px;
+      &-content {
+        padding-top: 42px;
       }
 
-      &__item {
+      &-wrapper {
+        &__items {
+          display: flex;
+          padding-left: 67px;
+          padding-right: 67px;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 55px 122px;
+        }
+
+        &__item {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+          &:nth-child(1) .help-wrapper__image {
+            background-image: url("/assets/icons/pet-food.svg");
+          }
+          &:nth-child(2) .help-wrapper__image {
+            background-image: url("/assets/icons/transportation.svg");
+          }
+          &:nth-child(3) .help-wrapper__image {
+            background-image: url("/assets/icons/toys.svg");
+          }
+          &:nth-child(4) .help-wrapper__image {
+            background-image: url("/assets/icons/bowls-and-cups.svg");
+          }
+          &:nth-child(5) .help-wrapper__image {
+            background-image: url("/assets/icons/shampoos.svg");
+          }
+          &:nth-child(6) .help-wrapper__image {
+            background-image: url("/assets/icons/vitamins.svg");
+          }
+          &:nth-child(7) .help-wrapper__image {
+            background-image: url("/assets/icons/medicines.svg");
+          }
+          &:nth-child(8) .help-wrapper__image {
+            background-image: url("/assets/icons/collars-or-leashes.svg");
+          }
+          &:nth-child(9) .help-wrapper__image {
+            background-image: url("/assets/icons/sleeping-area.svg");
+          }
+        }
+
+        &__image {
+          width: 60px;
+          height: 60px;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+
+        &__text {
+          @extend %ff-Georgia-Regular;
+          @extend %fz-h4;
+          color: $color-dark-l;
+          letter-spacing: 1px;
+          margin: 0;
+        }
+      }
+    }
+
+    .in-addition {
+      &__background {
+        background-color: $color-light-l;
+        height: 462px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: -1;
+      }
+
+      &-content {
+        display: flex;
+        justify-content: center;
+        padding-top: 80px;
+        gap: 30px;
+
+        img {
+          padding-top: 13px;
+          width: 100%;
+        }
+      }
+
+      &-container {
+        width: 380px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        &:nth-child(1) .help-wrapper__image {
-          background-image: url("/assets/icons/pet-food.svg");
-        }
-        &:nth-child(2) .help-wrapper__image {
-          background-image: url("/assets/icons/transportation.svg");
-        }
-        &:nth-child(3) .help-wrapper__image {
-          background-image: url("/assets/icons/toys.svg");
-        }
-        &:nth-child(4) .help-wrapper__image {
-          background-image: url("/assets/icons/bowls-and-cups.svg");
-        }
-        &:nth-child(5) .help-wrapper__image {
-          background-image: url("/assets/icons/shampoos.svg");
-        }
-        &:nth-child(6) .help-wrapper__image {
-          background-image: url("/assets/icons/vitamins.svg");
-        }
-        &:nth-child(7) .help-wrapper__image {
-          background-image: url("/assets/icons/medicines.svg");
-        }
-        &:nth-child(8) .help-wrapper__image {
-          background-image: url("/assets/icons/collars-or-leashes.svg");
-        }
-        &:nth-child(9) .help-wrapper__image {
-          background-image: url("/assets/icons/sleeping-area.svg");
-        }
-      }
+        justify-content: space-between;
 
-      &__image {
-        width: 60px;
-        height: 60px;
-        background-repeat: no-repeat;
-        background-position: center center;
-      }
+        &__title {
+          padding-right: 90px;
+          margin-bottom: 11px;
+        }
 
-      &__text {
-        @extend %ff-Georgia-Regular;
-        @extend %fz-large-text;
-        color: $color-dark-l;
-        letter-spacing: 1px;
+        &__subtitle {
+          @extend %ff-Georgia-Regular;
+          @extend %fz-h5;
+          color: $color-dark-l;
+          letter-spacing: 1px;
+          margin: 6px 0 20px 0;
+        }
+
+        .credit-card {
+          &__inner {
+            width: 346px;
+            padding: 8px 0 8px 0;
+            display: flex;
+            justify-content: center;
+            background-color: $color-primary;
+            border-radius: 9px;
+            border: 2px solid $color-primary;
+            background-image: url("/assets/icons/credit-card.svg");
+            background-repeat: no-repeat;
+            background-position: 4% 50%;
+            transition: 0.6s;
+
+            &:hover {
+              background-color: $color-light-xl;
+            }
+          }
+
+          &__number {
+            @extend %ff-Georgia-Regular;
+            @extend %fz-h4;
+            color: $color-dark-l;
+            text-decoration: none;
+            letter-spacing: 1px;
+            margin-left: 46px;
+          }
+        }
+
+        &__text {
+          @extend %ff-Arial-Italic;
+          @extend %fz-small-text2;
+          color: $color-dark-m;
+          margin: 20px 0 0 0;
+        }
       }
     }
   }
