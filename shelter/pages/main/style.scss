@@ -3,19 +3,31 @@
 @import "./common/extends";
 @import "./common/variables";
 
+:root {
+  scroll-behavior: smooth;
+}
+
 html {
   background-color: $color-light-xl;
+
+  a {
+    text-decoration: none;
+  }
 
   body {
     max-width: 1280px;
 
     .header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 60px 40px 40px 20px;
-      margin-bottom: 20px;
+      position: sticky;
+      top: 0;
 
+      &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 60px 40px 40px 20px;
+        background-image: url("/assets/images/noise_transparent@2x.png"),
+          radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+      }
       .logo {
         display: flex;
         flex-direction: column;
@@ -72,21 +84,14 @@ html {
 
     .not-only {
       margin-bottom: 76px;
-      &__background {
-        background-image: url("/assets/images/noise_transparent@2x.png"),
-          radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        z-index: -1;
-        height: 908px;
-      }
+      background-image: url("/assets/images/noise_transparent@2x.png"),
+        radial-gradient(100% 215.42% at 0% 100%, #5b483a 0%, #262425 100%);
     }
 
     .not-only-content {
       display: flex;
       justify-content: space-evenly;
+      padding-top: 19px;
     }
 
     .not-only-container {
@@ -184,21 +189,12 @@ html {
       color: $color-dark-l;
       margin: 0;
       padding-right: 125px;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
 
     .our-friends {
-      margin-bottom: 58px;
-
-      &__backgroud {
-        background-color: $color-light-l;
-        height: 877px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        z-index: -1;
-      }
-
+      background-color: $color-light-l;
+      padding-bottom: 101px;
       &-content {
         display: flex;
         flex-direction: column;
@@ -339,7 +335,7 @@ html {
       justify-content: center;
       align-items: center;
       text-align: center;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       margin-top: 0;
       margin-bottom: 57px;
       padding-top: 79px;
@@ -347,10 +343,6 @@ html {
 
     .help {
       margin-bottom: 99px;
-
-      &-content {
-        padding-top: 42px;
-      }
 
       &-wrapper {
         &__items {
@@ -415,14 +407,8 @@ html {
     }
 
     .in-addition {
-      &__background {
-        background-color: $color-light-l;
-        height: 462px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        z-index: -1;
-      }
+      padding-bottom: 100px;
+      background-color: $color-light-l;
 
       &-content {
         display: flex;
@@ -478,7 +464,6 @@ html {
             @extend %ff-Georgia-Regular;
             @extend %fz-h4;
             color: $color-dark-l;
-            text-decoration: none;
             letter-spacing: 1px;
             margin-left: 46px;
           }
@@ -491,6 +476,85 @@ html {
           margin: 20px 0 0 0;
         }
       }
+    }
+    .footer {
+      padding: 0px 40px 0 40px;
+      background-image: url("/assets/images/noise_transparent@2x.png"),
+        radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+    }
+    .footer-content {
+      padding-top: 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .footer-inner {
+      display: flex;
+      gap: 160px;
+
+      &__title {
+        @extend %ff-Georgia-Regular;
+        @extend %fz-h3;
+        color: $color-light-xl;
+        width: 280px;
+        margin: 0;
+        letter-spacing: 2px;
+        padding-top: 15px;
+      }
+    }
+    .footer-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 128px;
+      row-gap: 22px;
+
+      &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 310px;
+        height: 50px;
+      }
+
+      &__link {
+        @extend %ff-Georgia-Regular;
+        @extend %fz-h4;
+        color: $color-primary;
+        letter-spacing: 1px;
+        transition: 0.6s;
+        &:hover {
+          color: $color-light-l;
+        }
+      }
+    }
+    .item__email {
+      background-image: url("/assets/icons/mail.svg");
+      background-repeat: no-repeat;
+      background-position: 0% 50%;
+    }
+    .item__phone {
+      background-image: url("/assets/icons/phone.svg");
+      background-repeat: no-repeat;
+      background-position: 0% 50%;
+    }
+    .item__geo1,
+    .item__geo2 {
+      background-image: url("/assets/icons/pin.svg");
+      background-repeat: no-repeat;
+      background-position: 0% 50%;
+    }
+    .link__phone {
+      margin-right: 11px;
+    }
+    .link__geo1 {
+      margin-left: 26px;
+    }
+    .link__geo2 {
+      margin-left: 1px;
     }
   }
 }
