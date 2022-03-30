@@ -14,6 +14,7 @@ html {
   }
   body {
     max-width: 1280px;
+    cursor: url("../../../assets/icons/cursor.svg"), auto;
     .header {
       position: sticky;
       top: 0;
@@ -52,11 +53,13 @@ html {
             @extend %fz-text;
             color: $color-dark-l;
             cursor: pointer;
+            cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
             &-pets-page {
               @extend %ff-Arial-Regular;
               @extend %fz-text;
               color: $color-dark-l;
               cursor: pointer;
+              cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
               &:after {
                 content: "";
                 width: 0%;
@@ -92,7 +95,7 @@ html {
     }
     .our-friends {
       background-color: $color-light-l;
-      padding-bottom: 101px;
+      padding-bottom: 100px;
       &__content {
         display: flex;
         flex-direction: column;
@@ -113,6 +116,7 @@ html {
           transition: 0.6s;
           &:hover {
             background-color: $color-primary;
+            cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
           }
           .icon {
             fill: $color-dark-3xl;
@@ -132,6 +136,7 @@ html {
             border: 2px solid $color-dark-s;
             &:hover {
               background-color: $color-light-l;
+              cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
             }
             .icon {
               fill: $color-dark-s;
@@ -186,6 +191,7 @@ html {
         }
         &:hover {
           box-shadow: 15px 15px 10px -10px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(0, 0, 0, 0.1);
+          cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
         }
         &-item {
           background-color: $color-light-s;
@@ -225,6 +231,7 @@ html {
           transition: 0.6s;
           &:hover {
             background-color: $color-primary;
+            cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
           }
         }
       }
@@ -241,6 +248,85 @@ html {
       margin-top: 0;
       margin-bottom: 57px;
       padding-top: 79px;
+    }
+    .footer {
+      padding: 0px 40px 0 40px;
+      background-image: url("../../../assets/images/noise_transparent@2x.png"),
+        radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+      &__content {
+        padding-top: 40px;
+        display: flex;
+        justify-content: space-between;
+      }
+      &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 29px;
+        &-inner {
+          display: flex;
+          gap: 160px;
+        }
+        &-title {
+          @extend %ff-Georgia-Regular;
+          @extend %fz-h3;
+          color: $color-light-xl;
+          width: 280px;
+          margin: 0;
+          letter-spacing: 2px;
+          padding-top: 15px;
+        }
+      }
+      &__items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 129px;
+        row-gap: 21px;
+        margin: 0;
+        padding: 0;
+      }
+      &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 310px;
+        height: 50px;
+      }
+      &__link {
+        @extend %ff-Georgia-Regular;
+        @extend %fz-h4;
+        color: $color-primary;
+        letter-spacing: 1px;
+        transition: 0.6s;
+        &:hover {
+          color: $color-light-l;
+          cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+        }
+      }
+    }
+    .item-email {
+      background-image: url("../../../assets/icons/mail.svg");
+      background-repeat: no-repeat;
+      background-position: 0% 50%;
+    }
+    .item-phone {
+      background-image: url("../../../assets/icons/phone.svg");
+      background-repeat: no-repeat;
+      background-position: 0% 50%;
+    }
+    .item-geo1,
+    .item-geo2 {
+      background-image: url("../../../assets/icons/pin.svg");
+      background-repeat: no-repeat;
+      background-position: 0% 50%;
+    }
+    .link-phone {
+      margin-right: 11px;
+    }
+    .link-geo1 {
+      margin-left: 26px;
+    }
+    .link__geo2 {
+      margin-left: 1px;
     }
   }
 }
