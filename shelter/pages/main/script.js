@@ -1,12 +1,22 @@
 const menu = document.querySelector('.menu');
-const menuList = document.querySelector('.menu__list');
-const menuBtns = document.querySelectorAll('.menu__list-item');
+const menuLinks = document.querySelectorAll('.menu__list-item');
+const anchors = document.querySelectorAll('.anchor');
 
-function switchMenuActive(event) {
-  menuBtns.forEach(elem => {
-    elem.classList.remove('menu__list-item--active');
-    event.target.classList.add('menu__list-item--active');
+window.addEventListener('scroll', function () {
+  let current = '';
+
+  anchors.forEach(elem => {
+    const anchorTop = elem.offsetTop;
+    const anchorHeight = elem.clientHeight;
+    if (pageYOffset >= (anchorTop - anchorHeight / 2)) {
+      current = elem.getAttribute('id').replace('#', '');
+    }
   })
-}
 
-menuBtns.forEach(elem => elem.addEventListener('click', switchMenuActive));
+  menuLinks.forEach(elem => {
+    elem.classList.remove('menu__list-item--active');
+    if (elem.getAttribute('href').replace(/#*(?=\.)/, '').slice(1) === current) {
+      elem.classList.add('menu__list-item--active')
+    }
+  })
+})
