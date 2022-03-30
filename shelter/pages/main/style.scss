@@ -256,6 +256,7 @@ html {
         width: 270px;
         height: 435px;
         transition: 0.6s;
+        border-radius: 9px;
         &:nth-child(1) .our-friends__column-image {
           background-image: url("../../../assets/images/pets-katrine.png");
         }
@@ -277,6 +278,7 @@ html {
           gap: 30px;
           width: 270px;
           text-align: center;
+          border-radius: 9px;
         }
         &-image {
           background-position: center center;

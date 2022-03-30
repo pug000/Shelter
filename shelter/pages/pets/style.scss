@@ -20,8 +20,8 @@ html {
       &__content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding: 60px 40px 40px 20px;
-        background-image: $color-light-xl;
+        padding: 30px 40px 30px 20px;
+        background-color: $color-light-xl;
       }
       .logo {
         display: flex;
@@ -52,6 +52,26 @@ html {
             @extend %fz-text;
             color: $color-dark-l;
             cursor: pointer;
+            &-pets-page {
+              @extend %ff-Arial-Regular;
+              @extend %fz-text;
+              color: $color-dark-l;
+              cursor: pointer;
+              &:after {
+                content: "";
+                width: 0%;
+                border-bottom: 3px solid $color-primary;
+                display: block;
+                position: relative;
+                transition: width 0.6s;
+              }
+              &:hover::after {
+                width: 100%;
+              }
+              &--active::after {
+                width: 100%;
+              }
+            }
             &:after {
               content: "";
               width: 0%;
@@ -69,6 +89,158 @@ html {
           }
         }
       }
+    }
+    .our-friends {
+      background-color: $color-light-l;
+      padding-bottom: 101px;
+      &__content {
+        display: flex;
+        flex-direction: column;
+        &-buttons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+        }
+        &-button {
+          width: 52px;
+          height: 52px;
+          border-radius: 100px;
+          border: 2px solid $color-primary;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-color: $color-light-l;
+          transition: 0.6s;
+          &:hover {
+            background-color: $color-primary;
+          }
+          .icon {
+            fill: $color-dark-3xl;
+          }
+          &-number {
+            @extend %ff-Georgia-Regular;
+            @extend %fz-h4;
+            text-align: center;
+            background-color: $color-primary;
+            color: $color-dark-xl;
+            border-radius: 100px;
+            border: 2px solid $color-primary;
+            width: 52px;
+            height: 52px;
+          }
+          &--empty {
+            border: 2px solid $color-dark-s;
+            &:hover {
+              background-color: $color-light-l;
+            }
+            .icon {
+              fill: $color-dark-s;
+              transition: 0.6s;
+            }
+          }
+        }
+      }
+      &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-bottom: 60px;
+      }
+      &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px 28px;
+      }
+      &__column {
+        width: 270px;
+        height: 435px;
+        transition: 0.6s;
+        border-radius: 9px;
+        &:nth-child(1) .our-friends__column-image {
+          background-image: url("../../../assets/images/pets-katrine.png");
+        }
+        &:nth-child(2) .our-friends__column-image {
+          background-image: url("../../../assets/images/pets-jennifer.png");
+        }
+        &:nth-child(3) .our-friends__column-image {
+          background-image: url("../../../assets/images/pets-woody.png");
+        }
+        &:nth-child(4) .our-friends__column-image {
+          background-image: url("../../../assets/images/pets-sophia.png");
+        }
+        &:nth-child(5) .our-friends__column-image {
+          background-image: url("../../../assets/images/pets-timmy.png");
+        }
+        &:nth-child(6) .our-friends__column-image {
+          background-image: url("../../../assets/images/pets-charly.png");
+        }
+        &:nth-child(7) .our-friends__column-image {
+          background-image: url("../../../assets/images/pets-scarlet.png");
+        }
+        &:nth-child(8) .our-friends__column-image {
+          background-image: url("../../../assets/images/pets-freddie.png");
+        }
+        &:hover {
+          box-shadow: 15px 15px 10px -10px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(0, 0, 0, 0.1);
+        }
+        &-item {
+          background-color: $color-light-s;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+          width: 270px;
+          text-align: center;
+          border-radius: 9px;
+        }
+        &-image {
+          background-position: center center;
+          background-repeat: no-repeat;
+          width: 270px;
+          height: 270px;
+        }
+        &-pets-name {
+          @extend %ff-Georgia-Regular;
+          @extend %fz-h4;
+          color: $color-dark-l;
+          letter-spacing: 1px;
+          padding: 0 10px 0 10px;
+        }
+        &-button {
+          @extend %ff-Georgia-Regular;
+          @extend %fz-button;
+          color: $color-dark-3xl;
+          background-color: $color-light-xl;
+          border: 2px solid $color-primary;
+          border-radius: 100px;
+          max-width: 187px;
+          width: 100%;
+          height: 52px;
+          letter-spacing: 1px;
+          transition: 0.6s;
+          &:hover {
+            background-color: $color-primary;
+          }
+        }
+      }
+    }
+    .content-title {
+      @extend %ff-Georgia-Regular;
+      @extend %fz-h3;
+      color: $color-dark-l;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 2px;
+      margin-top: 0;
+      margin-bottom: 57px;
+      padding-top: 79px;
     }
   }
 }
