@@ -18,6 +18,7 @@ html {
     .header {
       position: sticky;
       top: 0;
+      z-index: 5;
       &__content {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -220,8 +221,7 @@ html {
         padding-left: 40px;
         padding-right: 40px;
         margin-bottom: 60px;
-        &-prev-button {
-          background-image: url("../../../assets/icons/Arrow-prev.svg");
+        &-button {
           background-repeat: no-repeat;
           background-position: 50% 50%;
           background-color: $color-light-xl;
@@ -230,25 +230,19 @@ html {
           border-radius: 100px;
           border: 2px solid $color-primary;
           transition: 0.6s;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
           &:hover {
             background-color: $color-primary;
             cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
           }
-        }
-        &-next-button {
-          background-image: url("../../../assets/icons/Arrow-next.svg");
-          background-repeat: no-repeat;
-          background-position: 50% 50%;
-          background-color: $color-light-xl;
-          width: 52px;
-          height: 52px;
-          border-radius: 100px;
-          border: 2px solid $color-primary;
-          order: 4;
-          transition: 0.6s;
-          &:hover {
-            background-color: $color-primary;
-            cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+          &:nth-child(1) {
+            background-image: url("../../../assets/icons/Arrow-prev.svg");
+          }
+          &:nth-child(2) {
+            background-image: url("../../../assets/icons/Arrow-next.svg");
+            order: 4;
           }
         }
       }
@@ -264,6 +258,7 @@ html {
         height: 435px;
         transition: 0.6s;
         border-radius: 9px;
+        background-color: $color-light-s;
         &:nth-child(1) .our-friends__column-image {
           background-image: url("../../../assets/images/pets-katrine.png");
         }
@@ -278,7 +273,6 @@ html {
           cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
         }
         &-item {
-          background-color: $color-light-s;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -306,16 +300,35 @@ html {
           @extend %fz-button;
           color: $color-dark-3xl;
           background-color: $color-light-xl;
-          border: 2px solid $color-primary;
           border-radius: 100px;
           max-width: 187px;
           width: 100%;
-          height: 52px;
+          height: 52px; 
           letter-spacing: 1px;
           transition: 0.6s;
-          &:hover {
+          border: 2px solid $color-primary;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          &:after {
+            content: '';
+            position: absolute;
+            display: block;
             background-color: $color-primary;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 100%;
+            z-index: -1;
+            transition: width 0.4s ease-in-out;
+          }
+          &:hover {
             cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+            outline: 0;
+          }
+          &:hover:after {
+            width: 110%;
           }
         }
       }
