@@ -1,13 +1,35 @@
 .footer {
-  padding: 0px 40px 0 40px;
+  padding: 0 40px 0 40px;
   background-image: url("../../../assets/images/noise_transparent@2x.png"),
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+
+  @media screen and (max-width: $breakpoint-laptop-l) {
+    padding: 0 0 0 40px;
+  }
+
+  @media screen and (max-width: $breakpoint-laptop) {
+    padding: 0 40px 0 40px;
+  }
 
   &__content {
     padding-top: 40px;
     justify-content: space-between;
     display: grid;
     grid-template-columns: minmax(auto, 740px) 300px;
+
+    &-img {
+      @media screen and (max-width: $breakpoint-laptop) {
+        justify-self: center;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-laptop) {
+      grid-template-columns: minmax(auto, 740px);
+      grid-template-rows: 280px;
+      justify-content: center;
+      align-items: center;
+      grid-gap: 40px;
+    }
   }
 
   &__container {
@@ -45,9 +67,8 @@
 
   &__item {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 310px;
     height: 50px;
 
     &:nth-child(1) {
@@ -61,6 +82,7 @@
       background-image: url("../../../assets/icons/pin.svg");
       background-repeat: no-repeat;
       background-position: 0% 50%;
+      justify-content: center;
     }
 
     &:nth-child(3) {  
@@ -70,7 +92,7 @@
     }
 
     &:nth-child(2) .footer__link{
-      margin-left: 26px;
+      margin-left: 33px;
     }
 
     &:nth-child(3) .footer__link {
@@ -78,7 +100,7 @@
     }
 
     &:nth-child(4) .footer__link {
-      margin-left: 2px;
+      margin-left: 9px;
     }
   }
 

@@ -14,8 +14,20 @@
     justify-content: space-between;
     padding: 19px 40px 0 40px;
     
+    @media screen and (max-width: $breakpoint-laptop) {
+      padding: 19px 0 0 40px;
+    }
+
+    @media screen and (max-width: $breakpoint-laptop-s) {
+      padding: 19px 40px 0 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
     &-inner {
-      max-width: 460px;
+      width: 460px;
       display: inline-flex;
       flex-direction: column;
       margin-bottom: 84px;

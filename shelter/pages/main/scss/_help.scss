@@ -53,6 +53,10 @@
       &:nth-child(9) .help__wrapper-image {
         background-image: url("../../../assets/icons/sleeping-area.svg");
       }
+
+      @media screen and (max-width: $breakpoint-laptop-l) {
+        width: 170px;
+      }
     }
 
     &-image {

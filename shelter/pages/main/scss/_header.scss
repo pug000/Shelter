@@ -10,6 +10,10 @@
     padding: 60px 40px 20px 40px;
     background-image: url("../../../assets/images/noise_transparent@2x.png"),
       radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+
+    @media screen and (max-width: $breakpoint-laptop-s) {
+      padding: 30px 40px 20px 40px;
+      }
   }
 
   .logo {
