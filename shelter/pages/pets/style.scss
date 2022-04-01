@@ -21,14 +21,14 @@ html {
       z-index: 5;
       &__content {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 30px 40px 30px 20px;
+        grid-template-columns: 187px 443px;
+        justify-content: space-between;
+        padding: 30px 40px 30px 40px;
         background-color: $color-light-xl;
       }
       .logo {
         display: flex;
         flex-direction: column;
-        padding-left: 20px;
         &__title {
           @extend %ff-Georgia-Regular;
           @extend %fz-h1;
@@ -46,9 +46,9 @@ html {
       .menu {
         &__list {
           display: flex;
-          justify-content: end;
+          justify-content: space-between;
           list-style-type: none;
-          gap: 36px;
+          padding: 0;
           &-item {
             @extend %ff-Arial-Regular;
             @extend %fz-text;
@@ -147,25 +147,26 @@ html {
         }
       }
       &__wrapper {
-        display: flex;
+        display: grid;
         align-items: center;
-        justify-content: space-between;
-        padding-left: 40px;
-        padding-right: 40px;
+        justify-content: space-evenly;
+        grid-template-columns: 1fr;
         margin-bottom: 60px;
+        grid-gap: 13px;
       }
       &__container {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
+        gap: 30px 0px;
         flex-wrap: wrap;
-        gap: 30px 28px;
       }
       &__column {
-        width: 270px;
         height: 435px;
         transition: 0.6s;
         border-radius: 9px;
+        background-color: $color-light-s;
+        display: grid;
         &:nth-child(1) .our-friends__column-image {
           background-image: url("../../../assets/images/pets-katrine.png");
         }
@@ -195,13 +196,11 @@ html {
           cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
         }
         &-item {
-          background-color: $color-light-s;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: start;
           align-items: center;
           gap: 30px;
-          width: 270px;
           text-align: center;
           border-radius: 9px;
         }
@@ -275,16 +274,19 @@ html {
         radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
       &__content {
         padding-top: 40px;
-        display: flex;
         justify-content: space-between;
+        display: grid;
+        grid-template-columns: minmax(auto, 740px) 300px;
       }
       &__container {
         display: flex;
         flex-direction: column;
-        gap: 29px;
+        gap: 30px;
         &-inner {
           display: flex;
-          gap: 160px;
+          gap: 60px;
+          justify-content: space-between;
+          padding-right: 20px;
         }
         &-title {
           @extend %ff-Georgia-Regular;
@@ -298,9 +300,9 @@ html {
       }
       &__items {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 129px;
-        row-gap: 21px;
+        grid-template-columns: 251px 302px;
+        grid-gap: 22px 60px;
+        justify-content: space-between;
         margin: 0;
         padding: 0;
       }
@@ -310,6 +312,31 @@ html {
         align-items: center;
         width: 310px;
         height: 50px;
+        &:nth-child(1) {
+          background-image: url("../../../assets/icons/mail.svg");
+          background-repeat: no-repeat;
+          background-position: 0% 50%;
+        }
+        &:nth-child(2),
+        &:nth-child(4) {
+          background-image: url("../../../assets/icons/pin.svg");
+          background-repeat: no-repeat;
+          background-position: 0% 50%;
+        }
+        &:nth-child(3) {  
+          background-image: url("../../../assets/icons/phone.svg");
+          background-repeat: no-repeat;
+          background-position: 0% 50%;
+        }
+        &:nth-child(2) .footer__link{
+          margin-left: 26px;
+        }
+        &:nth-child(3) .footer__link {
+          margin-right: 11px;
+        }
+        &:nth-child(4) .footer__link {
+          margin-left: 2px;
+        }
       }
       &__link {
         @extend %ff-Georgia-Regular;
@@ -322,31 +349,6 @@ html {
           cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
         }
       }
-    }
-    .item-email {
-      background-image: url("../../../assets/icons/mail.svg");
-      background-repeat: no-repeat;
-      background-position: 0% 50%;
-    }
-    .item-phone {
-      background-image: url("../../../assets/icons/phone.svg");
-      background-repeat: no-repeat;
-      background-position: 0% 50%;
-    }
-    .item-geo1,
-    .item-geo2 {
-      background-image: url("../../../assets/icons/pin.svg");
-      background-repeat: no-repeat;
-      background-position: 0% 50%;
-    }
-    .link-phone {
-      margin-right: 11px;
-    }
-    .link-geo1 {
-      margin-left: 26px;
-    }
-    .link__geo2 {
-      margin-left: 1px;
     }
   }
 }
