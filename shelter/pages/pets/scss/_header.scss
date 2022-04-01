@@ -1,0 +1,93 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 187px 443px;
+    justify-content: space-between;
+    padding: 30px 40px 30px 40px;
+    background-color: $color-light-xl;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      @extend %ff-Georgia-Regular;
+      @extend %fz-h1;
+      color: $color-dark-l;
+      margin: 0 0 9px 0;
+      letter-spacing: 2px;
+    }
+
+    &__subtitle {
+      @extend %ff-Arial-Regular;
+      @extend %fz-small-text;
+      color: $color-dark-l;
+      padding-left: 2px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .menu {
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+      padding: 0;
+
+      &-item {
+        @extend %ff-Arial-Regular;
+        @extend %fz-text;
+        color: $color-dark-l;
+        cursor: pointer;
+        cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+
+        &-pets-page {
+          @extend %ff-Arial-Regular;
+          @extend %fz-text;
+          color: $color-dark-l;
+          cursor: pointer;
+          cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+
+          &:after {
+            content: "";
+            width: 0%;
+            border-bottom: 3px solid $color-primary;
+            display: block;
+            position: relative;
+            transition: width 0.6s;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
+
+          &--active::after {
+            width: 100%;
+          }
+        }
+
+        &:after {
+          content: "";
+          width: 0%;
+          border-bottom: 3px solid $color-primary;
+          display: block;
+          position: relative;
+          transition: width 0.6s;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+        
+        &--active::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 77px;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin-bottom: 20px;
+  }
+
+  &__container {
+    padding-top: 13px;
+
+    &-inner {
+      width: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    &-text {
+      @extend %ff-Arial-Regular;
+      @extend %fz-text;
+      color: $color-dark-xl;
+      margin: 24px 0 1px 0;
+    }
+  }
+}
+
+.container-title {
+  @extend %ff-Georgia-Regular;
+  @extend %fz-h3;
+  color: $color-dark-l;
+  margin: 0;
+  padding: 3px 40px 0 0;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,176 @@
+.our-friends {
+  background-color: $color-light-l;
+  padding-bottom: 101px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    &-button {
+      @extend %ff-Georgia-Regular;
+      @extend %fz-button;
+      color: $color-dark-3xl;
+      background-color: $color-primary;
+      border-radius: 100px;
+      border: 0;
+      max-width: 261px;
+      width: 100%;
+      height: 52px;
+      align-self: center;
+      letter-spacing: 1px;
+      border: 2px solid $color-primary;
+      transition: 0.6s;
+
+      &:hover {
+        background-color: $color-light-xl;
+        cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 52px minmax(auto, 990px) 52px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px 0 40px;
+    grid-gap: 13px;
+
+    &-button {
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-color: $color-light-xl;
+      width: 52px;
+      height: 52px;
+      border-radius: 100px;
+      border: 2px solid $color-primary;
+      transition: 0.6s;
+      padding: 0;
+
+      &:hover {
+        background-color: $color-primary;
+        cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+      }
+
+      &:nth-child(1) {
+        background-image: url("../../../assets/icons/Arrow-prev.svg");
+      }
+
+      &:nth-child(2) {
+        background-image: url("../../../assets/icons/Arrow-next.svg");
+        order: 4;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__column {
+    height: 435px;
+    transition: 0.6s;
+    border-radius: 9px;
+    background-color: $color-light-s;
+
+    &:nth-child(1) .our-friends__column-image {
+      background-image: url("../../../assets/images/pets-katrine.png");
+    }
+
+    &:nth-child(2) .our-friends__column-image {
+      background-image: url("../../../assets/images/pets-jennifer.png");
+    }
+
+    &:nth-child(3) .our-friends__column-image {
+      background-image: url("../../../assets/images/pets-woody.png");
+    }
+
+    &:hover {
+      box-shadow: 15px 15px 10px -10px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(0, 0, 0, 0.1);
+      cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      gap: 30px;
+      text-align: center;
+      border-radius: 9px;
+    }
+
+    &-image {
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 270px;
+      height: 270px;
+    }
+
+    &-pets-name {
+      @extend %ff-Georgia-Regular;
+      @extend %fz-h4;
+      color: $color-dark-l;
+      letter-spacing: 1px;
+      padding: 0 10px 0 10px;
+    }
+
+    &-button {
+      @extend %ff-Georgia-Regular;
+      @extend %fz-button;
+      color: $color-dark-3xl;
+      background-color: $color-light-xl;
+      border-radius: 100px;
+      max-width: 187px;
+      width: 100%;
+      height: 52px; 
+      letter-spacing: 1px;
+      transition: 0.6s;
+      border: 2px solid $color-primary;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        background-color: $color-primary;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 100%;
+        z-index: -1;
+        transition: width 0.4s ease-in-out;
+      }
+
+      &:hover {
+        cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+        outline: 0;
+      }
+
+      &:hover:after {
+        width: 110%;
+      }
+    }
+  }
+}
+
+.content-title {
+  @extend %ff-Georgia-Regular;
+  @extend %fz-h3;
+  color: $color-dark-l;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 0;
+  margin-bottom: 59px;
+  padding-top: 81px;
+}
