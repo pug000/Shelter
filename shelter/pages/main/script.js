@@ -5,10 +5,14 @@ const anchors = document.querySelectorAll('.anchor');
 window.addEventListener('scroll', function () {
   let current = '';
 
-  anchors.forEach(elem => {
+  anchors.forEach((elem, index) => {
     const anchorTop = elem.offsetTop;
-    const anchorHeight = elem.clientHeight;
-    if (pageYOffset >= (anchorTop - anchorHeight / 2)) {
+    const headerHeight = anchors[0].clientHeight;
+    const helpHeight = anchors[1].clientHeight;
+    const footerHeight = anchors[2].clientHeight;
+    if (pageYOffset >= (anchorTop - headerHeight / 2)
+      || pageYOffset >= (anchorTop - helpHeight / 2)
+      || pageYOffset >= (anchorTop - footerHeight * 2)) {
       current = elem.getAttribute('id').replace('#', '');
     }
   })

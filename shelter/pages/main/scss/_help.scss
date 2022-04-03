@@ -2,13 +2,26 @@
   margin-bottom: 99px;
 
   &__wrapper {
+
+    padding: 0 22px 0 22px;
+
+    @media screen and (max-width: $breakpoint-laptop-l) {
+      padding: 0 5px 0 5px;
+    }
+
     &-items {
       display: flex;
-      padding-left: 22px;
-      padding-right: 22px;
       justify-content: center;
       flex-wrap: wrap;
       gap: 55px 122px;
+
+      @media screen and (max-width: $breakpoint-laptop-l) {
+        display: grid;
+        grid-template-columns: repeat(3, 170px);
+        grid-gap: 55px 0px;
+        justify-content: space-evenly;
+      }
+
     }
 
     &-item {
@@ -54,9 +67,9 @@
         background-image: url("../../../assets/icons/sleeping-area.svg");
       }
 
-      @media screen and (max-width: $breakpoint-laptop-l) {
-        width: 170px;
-      }
+      // @media screen and (max-width: $breakpoint-laptop-l) {
+      //   width: 170px;
+      // }
     }
 
     &-image {

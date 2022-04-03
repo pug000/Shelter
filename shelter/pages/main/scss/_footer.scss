@@ -11,17 +11,15 @@
     padding: 0 40px 0 40px;
   }
 
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding: 0 0 0 10px;
+  }
+
   &__content {
     padding-top: 40px;
     justify-content: space-between;
     display: grid;
     grid-template-columns: minmax(auto, 740px) 300px;
-
-    &-img {
-      @media screen and (max-width: $breakpoint-laptop) {
-        justify-self: center;
-      }
-    }
 
     @media screen and (max-width: $breakpoint-laptop) {
       grid-template-columns: minmax(auto, 740px);
@@ -30,19 +28,35 @@
       align-items: center;
       grid-gap: 40px;
     }
+
+    @media screen and (max-width: $breakpoint-tablet-l) {
+      padding-top: 0;
+      grid-gap: 48px;
+    }
+
+    &-img {
+      @media screen and (max-width: $breakpoint-laptop) {
+        justify-self: center;
+      }
+    }
   }
 
   &__container {
     display: flex;
     flex-direction: column;
     padding-top: 2px;
-    gap: 30px;
+    gap: 31px;
 
     &-inner {
       display: flex;
       gap: 60px;
       justify-content: space-between;
       padding-right: 20px;
+      
+      @media screen and (max-width: $breakpoint-tablet-l) {
+        justify-content: space-around;
+        gap: 10px;
+      }
     }
 
     &-title {
@@ -53,6 +67,10 @@
       margin: 0;
       letter-spacing: 2px;
       padding-top: 15px;
+
+      @media screen and (max-width: $breakpoint-tablet-l) {
+        padding-top: 20px;
+      }
     }
   }
 
@@ -63,6 +81,13 @@
     justify-content: space-between;
     margin: 0;
     padding: 0;
+
+    @media screen and (max-width: $breakpoint-tablet-l) {
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: $breakpoint-tablet) {
+      grid-gap: 22px 30px;
+    }
   }
 
   &__item {
@@ -92,7 +117,7 @@
     }
 
     &:nth-child(2) .footer__link{
-      margin-left: 33px;
+      margin-left: 35px;
     }
 
     &:nth-child(3) .footer__link {

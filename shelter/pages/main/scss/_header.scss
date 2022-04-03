@@ -3,22 +3,31 @@
   top: 0;
   z-index: 5;
 
+  @media screen and (max-width: $breakpoint-tablet-l) {
+    position: relative;
+  }
+
   &__content {
     display: grid;
-    grid-template-columns: 187px 443px;
+    grid-template-columns: 187px minmax(auto, 443px);
     justify-content: space-between;
     padding: 60px 40px 20px 40px;
     background-image: url("../../../assets/images/noise_transparent@2x.png"),
       radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
 
-    @media screen and (max-width: $breakpoint-laptop-s) {
-      padding: 30px 40px 20px 40px;
-      }
+    @media screen and (max-width: $breakpoint-tablet-l) {
+      padding: 30px 30px 20px 30px;
+    }
   }
 
   .logo {
     display: flex;
     flex-direction: column;
+
+    &__link {
+      cursor: pointer;
+      cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+    }
 
     &__title {
       @extend %ff-Georgia-Regular;
@@ -38,6 +47,11 @@
   }
 
   .menu {
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+
     &__list {
       display: flex;
       justify-content: space-between;
@@ -94,5 +108,36 @@
         }
       }
     }
+  }
+
+  .burger__button {
+    display: none;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    border: none;
+    background: none;
+    user-select: none;
+    transition: all 0.5s ease-in-out;
+
+    &--active {
+      opacity: 0;
+      transform: rotate(270deg)
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      display: flex;
+      flex-direction: column;
+      justify-self: flex-end;
+      justify-content: center;
+      align-self: flex-end;
+    }
+  }
+
+  .line {
+    width: 100%;
+    height: 2px;
+    margin: 5px 0;
+    background-color: $color-primary;
   }
 }

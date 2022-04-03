@@ -13,8 +13,10 @@
   <header class="header anchor" id="#top">
     <div class="header__content">
       <div class="logo">
-        <h1 class="logo__title">Cozy House</h1>
-        <div class="logo__subtitle">Shelter for pets in Boston</div>
+        <a class="logo__link" href="#top">
+          <h1 class="logo__title">Cozy House</h1>
+          <div class="logo__subtitle">Shelter for pets in Boston</div>
+        </a>
       </div>
       <nav class="menu">
         <ul class="menu__list">
@@ -24,6 +26,11 @@
           <li><a class="menu__list-item" href="#footer">Contacts</a></li>
         </ul>
       </nav>
+      <button class="burger__button">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </button>
     </div>
   </header>
   <main>
@@ -39,12 +46,10 @@
             <button class="not-only__content-button">Make a friend</button>
           </div>
         </div>
-        <div class="not-only__image">
-          <picture>
-            <source srcset="../../assets/images/start-screen-puppy768.png" type="image/png" media="(max-width:800px)">
-            <img class="not-only__content-image image" src="../../assets/images/start-screen-puppy.png" alt="puppy">
-          </picture>
-        </div>
+        <picture class="not-only__image">
+          <source srcset="../../assets/images/start-screen-puppy768.png" type="image/png" media="(max-width:900px)">
+          <img class="not-only__content-image image" src="../../assets/images/start-screen-puppy.png" alt="puppy">
+        </picture>
       </div>
     </section>
     <section class="about">
@@ -101,7 +106,7 @@
             </div>
           </div>
         </div>
-        <button class="our-friends__content-button anchor" id="help">Get to know the rest</button>
+        <button class="our-friends__content-button  anchor" id="help">Get to know the rest</button>
       </div>
     </section>
     <section class="help">
@@ -150,7 +155,7 @@
       </div>
     </section>
     <section class="in-addition">
-      <div class="in-addition__content anchor" id="footer">
+      <div class="in-addition__content">
         <div class="in-addition__content-img">
           <picture>
             <source srcset="../../assets/images/donation-dog.png" type="image/png" media="(min-width:1024px)">
@@ -172,7 +177,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
+  <footer class="footer anchor" id="footer">
     <div class="footer__content">
       <div class="footer__container">
         <div class="footer__container-inner">

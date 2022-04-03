@@ -12,14 +12,18 @@
     gap: 120px;
     margin-bottom: 20px;
 
-    @media screen and (max-width: $breakpoint-laptop-s) {
+    @media screen and (max-width: $breakpoint-tablet-l) {
       padding: 0 20px 0 20px;
-      gap: 80px;
+      gap: 73px;
       flex-direction: column;
     }
 
     &-img {
-      order: 2;
+      padding-top: 5px;
+      @media screen and (max-width: $breakpoint-tablet-l) {
+        padding-top: 7px;
+        order: 2;
+      }
     }
   }
 
