@@ -8,25 +8,20 @@
   }
 
   @media screen and (max-width: $breakpoint-laptop) {
-    padding: 0 40px 0 40px;
+    padding: 0 65px 0 65px;
   }
 
   @media screen and (max-width: $breakpoint-tablet) {
-    padding: 0 0 0 10px;
+    padding: 0 0 0 5px;
   }
 
   &__content {
-    padding-top: 40px;
     justify-content: space-between;
-    display: grid;
-    grid-template-columns: minmax(auto, 740px) 300px;
+    display: flex;
 
     @media screen and (max-width: $breakpoint-laptop) {
-      grid-template-columns: minmax(auto, 740px);
-      grid-template-rows: 280px;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      grid-gap: 40px;
     }
 
     @media screen and (max-width: $breakpoint-tablet-l) {
@@ -35,28 +30,39 @@
     }
 
     &-img {
+      padding-top: 40px;
       @media screen and (max-width: $breakpoint-laptop) {
         justify-self: center;
+      }
+
+      @media screen and (max-width: $breakpoint-tablet-l) {
+        padding-top: 8px;
       }
     }
   }
 
   &__container {
     display: flex;
-    flex-direction: column;
-    padding-top: 2px;
-    gap: 31px;
+    justify-content: space-between;
+    gap: 25px;
+    padding-top: 42px;
+    max-width: 740px;
+    width: 100%;
 
-    &-inner {
+    @media screen and (max-width: $breakpoint-tablet-l) {
+      padding-top: 11px;
+      gap: 25px;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet-s) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-column {
       display: flex;
-      gap: 60px;
-      justify-content: space-between;
-      padding-right: 20px;
-      
-      @media screen and (max-width: $breakpoint-tablet-l) {
-        justify-content: space-around;
-        gap: 10px;
-      }
+      flex-direction: column;
+      gap: 30px;
     }
 
     &-title {
@@ -67,18 +73,24 @@
       margin: 0;
       letter-spacing: 2px;
       padding-top: 15px;
+      padding-right: 20px;
 
       @media screen and (max-width: $breakpoint-tablet-l) {
         padding-top: 20px;
+      }
+
+      @media screen and (max-width: $breakpoint-tablet-s) {
+        text-align: center;
+        font-size: 25px;
+        line-height: 33px;
       }
     }
   }
 
   &__items {
-    display: grid;
-    grid-template-columns: 251px 302px;
-    grid-gap: 22px 60px;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
     margin: 0;
     padding: 0;
 
@@ -94,38 +106,43 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    text-align: left;
     height: 50px;
 
-    &:nth-child(1) {
+    &-email {
       background-image: url("../../../assets/icons/mail.svg");
-      background-repeat: no-repeat;
-      background-position: 0% 50%;
-    }
-
-    &:nth-child(2),
-    &:nth-child(4) {
-      background-image: url("../../../assets/icons/pin.svg");
       background-repeat: no-repeat;
       background-position: 0% 50%;
       justify-content: center;
     }
 
-    &:nth-child(3) {  
+    &-phone {
       background-image: url("../../../assets/icons/phone.svg");
       background-repeat: no-repeat;
       background-position: 0% 50%;
+      justify-content: center;
     }
 
-    &:nth-child(2) .footer__link{
-      margin-left: 35px;
-    }
-
-    &:nth-child(3) .footer__link {
-      margin-right: 11px;
-    }
-
-    &:nth-child(4) .footer__link {
-      margin-left: 9px;
+    &-geo{
+      justify-content: center;
+      &:nth-child(1) {
+        background-image: url("../../../assets/icons/pin.svg");
+        background-repeat: no-repeat;
+        background-position: 0% 50%;
+        width: 302px;
+      }
+      &:nth-child(2) {
+        background-image: url("../../../assets/icons/pin.svg");
+        background-repeat: no-repeat;
+        background-position: 0% 50%;
+        width: 302px;
+      }
+      &:nth-child(1) .footer__link-geo {
+        margin-left: 45px;
+      }
+      &:nth-child(2) .footer__link-geo {
+        margin-left: 11px;
+      }
     }
   }
 
@@ -139,6 +156,10 @@
     &:hover {
       color: $color-light-l;
       cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+    }
+
+    &-email {
+      margin-left: 11px;
     }
   }
 }
