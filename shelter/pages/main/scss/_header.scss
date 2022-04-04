@@ -61,16 +61,22 @@
       &-item {
         @extend %ff-Arial-Regular;
         @extend %fz-text;
-        color: $color-primary;
+        color: $color-dark-s;
         cursor: pointer;
         cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+        transition: 0.6s;
 
         &-pets-page {
           @extend %ff-Arial-Regular;
           @extend %fz-text;
-          color: $color-primary;
+          color: $color-dark-s;
           cursor: pointer;
           cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+          transition: 0.6s;
+
+          &:hover {
+            color: $color-light-s;
+          }
 
           &:after {
             content: "";
@@ -88,6 +94,14 @@
           &--active::after {
             width: 100%;
           }
+        }
+
+        &:hover {
+          color: $color-light-s;
+        }
+
+        &--active {
+          color: $color-light-s;
         }
 
         &:after {

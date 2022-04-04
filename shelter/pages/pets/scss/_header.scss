@@ -51,12 +51,28 @@
         cursor: pointer;
         cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
 
+        &:hover {
+          color: $color-dark-3xl;
+        }
+
+        &--active {
+          color: $color-dark-l;
+        }
+
         &-pets-page {
           @extend %ff-Arial-Regular;
           @extend %fz-text;
           color: $color-dark-l;
           cursor: pointer;
           cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+
+          &:hover {
+            color: $color-dark-3xl;
+          }
+
+          &--active {
+            color: $color-dark-l;
+          }
 
           &:after {
             content: "";
