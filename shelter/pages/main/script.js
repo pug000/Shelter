@@ -1,11 +1,13 @@
-const menu = document.querySelector('.menu');
+const menuList = document.querySelector('.menu__list');
 const menuLinks = document.querySelectorAll('.menu__list-item');
 const anchors = document.querySelectorAll('.anchor');
+const burgerMenuBtn = document.querySelector('.menu__burger-button');
+const menuOverlay = document.querySelector('.menu__overlay');
 
 window.addEventListener('scroll', function () {
   let current = '';
 
-  anchors.forEach((elem, index) => {
+  anchors.forEach((elem) => {
     const anchorTop = elem.offsetTop;
     const headerHeight = anchors[0].clientHeight;
     const helpHeight = anchors[1].clientHeight;
@@ -24,3 +26,25 @@ window.addEventListener('scroll', function () {
     }
   })
 })
+
+burgerMenuBtn.addEventListener('click', burgerMenuOpen);
+
+function burgerMenuOpen(event) {
+  if (event.target.classList.contains('menu__burger-button')) {
+    burgerMenuBtn.classList.toggle('menu__burger-button--active')
+    menuList.classList.toggle('menu__list--active');
+    menuOverlay.classList.toggle('menu__overlay--active');
+    document.body.classList.toggle('lock');
+  }
+}
+
+menuLinks.forEach((elem) => elem.addEventListener('click', burgerMenuClose));
+menuOverlay.addEventListener('click', burgerMenuClose);
+
+function burgerMenuClose() {
+  burgerMenuBtn.classList.remove('menu__burger-button--active');
+  menuList.classList.remove('menu__list--active');
+  menuOverlay.classList.remove('menu__overlay--active');
+  document.body.classList.remove('lock');
+
+}
