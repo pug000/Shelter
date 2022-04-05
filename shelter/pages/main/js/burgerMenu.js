@@ -2,8 +2,8 @@ import { menuList, menuLinks, burgerMenuBtn, menuOverlay } from "./variables.js"
 
 burgerMenuBtn.addEventListener('click', burgerMenuOpen);
 
-export function burgerMenuOpen(event) {
-  if (event.target.classList.contains('menu__burger-button')) {
+export function burgerMenuOpen() {
+  if (burgerMenuBtn) {
     burgerMenuBtn.classList.toggle('menu__burger-button--active')
     menuList.classList.toggle('menu__list--active');
     menuOverlay.classList.toggle('menu__overlay--active');
