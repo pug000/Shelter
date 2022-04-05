@@ -13,16 +13,20 @@
     padding-top: 79px;
     grid-template-columns: 505px 380px;
     grid-gap: 30px;
+    justify-items: center;
 
     @media screen and (max-width: $breakpoint-laptop) {
-      grid-template-columns: 505px;
-      grid-template-rows: 380px;
-      justify-content: center;
+      grid-template-columns: minmax(auto, 505px);
+      grid-template-rows: minmax(auto, 380px);
     }
 
     @media screen and (max-width: $breakpoint-tablet-l) {
       padding-top: 32px;
       grid-gap: 5px;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile-l) {
+      padding: 32px 10px 0 10px;
     }
     
     &-img {
@@ -31,6 +35,9 @@
       @media screen and (max-width: $breakpoint-laptop) {
         grid-row: 2;
       }
+    }
+    img {
+      width: 100%;
     }
   }
 
@@ -41,10 +48,15 @@
     letter-spacing: 1px;
     margin-left: 46px;
     cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+
+    @media screen and (max-width: $breakpoint-mobile-l) {
+      font-size: 15px;
+      line-height: 17px;
+    }
   }
 
   &__container {
-    width: 380px;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -53,9 +65,17 @@
       justify-self: center;
     }
 
+    @media screen and (max-width: $breakpoint-mobile-l) {
+      align-items: center;
+    }
+
     &-title {
-      padding-right: 90px;
+      max-width: 300px;
       margin-bottom: 13px;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        max-width: 225px;
+      }
     }
 
     &-subtitle {
@@ -64,10 +84,23 @@
       color: $color-dark-l;
       letter-spacing: 1px;
       margin: 6px 0 20px 0;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        letter-spacing: 0;
+        line-height: 25px;
+      }
+    }
+
+    &-inner {
+      max-width: 349px;
+      width: 100%;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        max-width: 281px;
+      }
     }
 
     &-credit-card {
-      width: 346px;
       padding: 8px 0 8px 0;
       display: flex;
       justify-content: center;
@@ -78,6 +111,10 @@
       background-repeat: no-repeat;
       background-position: 4% 50%;
       transition: 0.6s;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        padding: 13px 0 13px 0;
+      }
 
       &:hover {
         background-color: $color-light-xl;
@@ -90,6 +127,10 @@
       @extend %fz-small-text2;
       color: $color-dark-m;
       margin: 20px 0 0 0;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        text-align: justify;
+      }
     }
   }
 }

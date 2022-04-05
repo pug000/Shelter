@@ -21,6 +21,10 @@
         grid-gap: 55px 0px;
         justify-content: space-evenly;
       }
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        grid-template-columns: repeat(2, 130px);
+      }
     }
 
     &-item {
@@ -80,6 +84,11 @@
       color: $color-dark-l;
       letter-spacing: 1px;
       margin: 0;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        font-size: 15px;
+        line-height: 17px;
+      }
     }
   }
 }
