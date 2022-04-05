@@ -30,6 +30,12 @@
       gap: 0;
       justify-content: space-evenly;
     }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      justify-content: start;
+      gap: 20px;
+      padding: 31px 15px 20px 10px;
+    }
   }
 
   .logo {
@@ -92,6 +98,10 @@
 
         &--active {
           transform: translateX(0);
+        }
+
+        @media screen and (max-width: $breakpoint-mobile) {
+          width: 100vw;
         }
       }
 

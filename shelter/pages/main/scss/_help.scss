@@ -1,12 +1,20 @@
 .help {
   margin-bottom: 99px;
 
+  @media screen and (max-width: $breakpoint-mobile-l) {
+    margin-bottom: 41px;
+  }
+
   &__wrapper {
 
     padding: 0 22px 0 22px;
 
     @media screen and (max-width: $breakpoint-laptop-l) {
-      padding: 0 5px 0 5px;
+      padding: 0 9px 0 9px;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile-l) {
+      padding: 0 15px 0 22px;
     }
 
     &-items {
@@ -23,7 +31,8 @@
       }
 
       @media screen and (max-width: $breakpoint-mobile-l) {
-        grid-template-columns: repeat(2, 130px);
+        grid-template-columns: repeat(2, minmax(auto, 130px));
+        grid-gap: 29px 37px;
       }
     }
 
@@ -33,6 +42,10 @@
       justify-content: center;
       align-items: center;
       gap: 30px;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        gap: 21px;
+      }
 
       &:nth-child(1) .help__wrapper-image {
         background-image: url("../../../assets/icons/pet-food.svg");
@@ -76,6 +89,12 @@
       height: 60px;
       background-repeat: no-repeat;
       background-position: center center;
+      background-size: contain;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        max-width: 50px;
+        max-height: 50px;
+      }
     }
     
     &-text {

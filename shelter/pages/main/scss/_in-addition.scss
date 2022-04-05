@@ -6,6 +6,10 @@
     padding-bottom: 96px;
   }
 
+  @media screen and (max-width: $breakpoint-mobile-l) {
+    padding-bottom: 36px;
+  }
+
   &__content {
     display: grid;
     justify-content: center;
@@ -17,16 +21,17 @@
 
     @media screen and (max-width: $breakpoint-laptop) {
       grid-template-columns: minmax(auto, 505px);
-      grid-template-rows: minmax(auto, 380px);
+      grid-template-rows: minmax(auto, 280px);
     }
 
     @media screen and (max-width: $breakpoint-tablet-l) {
-      padding-top: 32px;
-      grid-gap: 5px;
+      grid-gap: 56px;
+      padding: 81px 21px 0 20px;
     }
 
     @media screen and (max-width: $breakpoint-mobile-l) {
-      padding: 32px 10px 0 10px;
+      padding: 0px 20px 0 20px;
+      grid-gap: 80px;
     }
     
     &-img {
@@ -67,6 +72,7 @@
 
     @media screen and (max-width: $breakpoint-mobile-l) {
       align-items: center;
+      gap: 0;
     }
 
     &-title {
@@ -75,6 +81,8 @@
 
       @media screen and (max-width: $breakpoint-mobile-l) {
         max-width: 225px;
+        padding: 100px 0 0 0;
+        margin-bottom: 16px;
       }
     }
 
@@ -88,6 +96,7 @@
       @media screen and (max-width: $breakpoint-mobile-l) {
         letter-spacing: 0;
         line-height: 25px;
+        margin: 0 0 21px 0;
       }
     }
 
@@ -97,6 +106,7 @@
 
       @media screen and (max-width: $breakpoint-mobile-l) {
         max-width: 281px;
+        margin-bottom: 21px;
       }
     }
 
@@ -113,7 +123,7 @@
       transition: 0.6s;
 
       @media screen and (max-width: $breakpoint-mobile-l) {
-        padding: 13px 0 13px 0;
+        padding: 11px 0 11px 0;
       }
 
       &:hover {
@@ -130,6 +140,7 @@
 
       @media screen and (max-width: $breakpoint-mobile-l) {
         text-align: justify;
+        margin: 0 0 15px 0;
       }
     }
   }

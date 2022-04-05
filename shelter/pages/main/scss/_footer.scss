@@ -15,6 +15,10 @@
     padding: 0 0 0 5px;
   }
 
+  @media screen and (max-width: $breakpoint-mobile-l) {
+    padding: 0 10px 0 10px;
+  }
+
   &__content {
     justify-content: space-between;
     display: flex;
@@ -27,6 +31,10 @@
     @media screen and (max-width: $breakpoint-tablet-l) {
       padding-top: 0;
       grid-gap: 48px;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile-l) {
+      grid-gap: 25px;
     }
 
     &-img {
@@ -59,10 +67,33 @@
       align-items: center;
     }
 
+    @media screen and (max-width: $breakpoint-mobile-l) {
+      gap: 10px;
+    }
+
     &-column {
       display: flex;
       flex-direction: column;
       gap: 30px;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        gap: 29px;
+      }
+
+      &:nth-child(2) .footer__container-title {
+        padding-left: 3px;
+        
+        @media screen and (max-width: $breakpoint-mobile-l) {
+          padding-left: 11px;
+        }
+      }
+
+      &:nth-child(2) {
+
+        @media screen and (max-width: $breakpoint-mobile-l) {
+          gap: 36px;
+        }
+      }
     }
 
     &-title {
@@ -73,7 +104,6 @@
       margin: 0;
       letter-spacing: 2px;
       padding-top: 15px;
-      padding-right: 20px;
 
       @media screen and (max-width: $breakpoint-tablet-l) {
         padding-top: 20px;
@@ -81,8 +111,9 @@
 
       @media screen and (max-width: $breakpoint-mobile-l) {
         text-align: center;
-        font-size: 25px;
+        font-size: 26px;
         line-height: 33px;
+        letter-spacing: 1px;
       }
     }
   }
@@ -114,6 +145,10 @@
       background-repeat: no-repeat;
       background-position: 0% 50%;
       justify-content: center;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        background-position: 6% 45%;
+      }
     }
 
     &-phone {
@@ -121,6 +156,10 @@
       background-repeat: no-repeat;
       background-position: 0% 50%;
       justify-content: center;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        background-position: 8% 45%;
+      }
     }
 
     &-geo{
@@ -130,6 +169,10 @@
         background-repeat: no-repeat;
         background-position: 0% 50%;
         width: 302px;
+
+        @media screen and (max-width: $breakpoint-mobile-l) {
+          margin-bottom: 5px;
+        }
       }
       &:nth-child(2) {
         background-image: url("../../../assets/icons/pin.svg");
@@ -159,7 +202,19 @@
     }
 
     &-email {
-      margin-left: 11px;
+      margin-left: 30px;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        margin-left: 60px;
+      }
+    }
+
+    &-phone {
+      margin-left: 16px;
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        margin-left: 60px;
+      }
     }
   }
 }
