@@ -1,21 +1,30 @@
-import { menuLinks, anchors, headerHeight, helpHeight, footerHeight } from "./variables.js";
+import { menuMainLinks, menuPetsLinks, header, help, footer, headerHeight, helpHeight, footerHeight } from "./variables.js";
 
 window.addEventListener('scroll', menuSwitchActive)
 
 function menuSwitchActive() {
   let current = '';
 
-  anchors.forEach((elem) => {
-    const anchorTop = elem.offsetTop;
+  if (pageYOffset >= (header.offsetTop - headerHeight / 2)) {
+    current = header.getAttribute('id').replace('#', '');
+  }
 
-    if (pageYOffset >= (anchorTop - headerHeight / 2)
-      || pageYOffset >= (anchorTop - helpHeight / 2)
-      || pageYOffset >= (anchorTop - footerHeight * 2)) {
-      current = elem.getAttribute('id').replace('#', '');
+  if (pageYOffset >= (help.offsetTop - helpHeight / 2)) {
+    current = help.getAttribute('id').replace('#', '');
+  }
+
+  if (pageYOffset >= (footer.offsetTop - footerHeight * 2)) {
+    current = footer.getAttribute('id').replace('#', '');
+  }
+
+  menuMainLinks.forEach(elem => {
+    elem.classList.remove('menu__list-item--active');
+    if (elem.getAttribute('href').replace(/#*(?=\.)/, '').slice(1) === current) {
+      elem.classList.add('menu__list-item--active');
     }
   })
 
-  menuLinks.forEach(elem => {
+  menuPetsLinks.forEach(elem => {
     elem.classList.remove('menu__list-item--active');
     if (elem.getAttribute('href').replace(/#*(?=\.)/, '').slice(1) === current) {
       elem.classList.add('menu__list-item--active');

@@ -1,4 +1,4 @@
-import { menuList, menuLinks, burgerMenuBtn, menuOverlay } from "./variables.js";
+import { menuList, menuMainLinks, menuPetsLinks, burgerMenuBtn, menuOverlay } from "./variables.js";
 
 burgerMenuBtn.addEventListener('click', burgerMenuOpen);
 
@@ -11,7 +11,8 @@ export function burgerMenuOpen() {
   }
 }
 
-menuLinks.forEach((elem) => elem.addEventListener('click', burgerMenuClose));
+menuMainLinks.forEach((elem) => elem.addEventListener('click', burgerMenuClose));
+menuPetsLinks.forEach((elem) => elem.addEventListener('click', burgerMenuClose));
 menuOverlay.addEventListener('click', burgerMenuClose);
 
 export function burgerMenuClose() {
