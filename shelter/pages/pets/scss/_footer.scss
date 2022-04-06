@@ -19,6 +19,10 @@
     padding: 0 10px 0 10px;
   }
 
+  @media screen and (max-width: $breakpoint-mobile) {
+    padding: 0;
+  }
+
   &__content {
     justify-content: space-between;
     display: flex;

@@ -22,6 +22,10 @@
       @media screen and (max-width: $breakpoint-tablet-l) {
         gap: 10px;
       }
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        gap: 5px;
+      }
     }
 
     &-button {
