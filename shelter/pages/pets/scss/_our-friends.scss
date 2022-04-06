@@ -2,6 +2,14 @@
   background-color: $color-light-l;
   padding-bottom: 100px;
 
+  @media screen and (max-width: $breakpoint-tablet-l)  {
+    padding-bottom: 76px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-l) {
+    padding-bottom: 42px;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -10,6 +18,10 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
+
+      @media screen and (max-width: $breakpoint-tablet-l) {
+        gap: 10px;
+      }
     }
 
     &-button {
@@ -66,14 +78,37 @@
     grid-template-columns: 1fr;
     margin-bottom: 60px;
     grid-gap: 13px;
+
+    @media screen and (max-width: $breakpoint-tablet-l) {
+      margin-bottom: 42px;
+    }
   }
 
   &__container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 30px 0px;
+    gap: 30px 5px;
     flex-wrap: wrap;
+
+    @media screen and (max-width: $breakpoint-laptop-2l) {
+      display: grid;
+      grid-template-columns: repeat(3, 270px);
+      grid-gap: 30px 10px;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet-l) {
+      grid-template-columns: repeat(2, 270px);
+      padding: 0 63px 0 63px;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      padding: 0 15px 0 15px;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet-s) {
+      grid-template-columns: repeat(1, 270px);
+    }
   }
 
   &__column {
@@ -82,6 +117,21 @@
     border-radius: 9px;
     background-color: $color-light-s;
     display: grid;
+
+    @media screen and (max-width: $breakpoint-laptop-2l) {
+      &:nth-child(7),
+      &:nth-child(8) {
+        display: none;
+      }
+    }
+    
+    @media screen and (max-width: $breakpoint-tablet-s) {
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        display: none;
+      }
+    }
 
     &:nth-child(1) .our-friends__column-image {
       background-image: url("../../../assets/images/pets-katrine.png");
@@ -199,4 +249,16 @@
   margin-top: 0;
   margin-bottom: 59px;
   padding-top: 81px;
+
+  @media screen and (max-width: $breakpoint-tablet-l) {
+    margin-bottom: 29px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-l) {
+    font-size: 26px;
+    line-height: 33px;
+    letter-spacing: 1px;
+    padding-top: 51px;
+    margin-bottom: 40px;
+  }
 }
