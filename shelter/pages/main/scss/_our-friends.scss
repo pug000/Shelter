@@ -47,8 +47,8 @@
     
     @media screen and (max-width: $breakpoint-mobile-l) {
       padding: 0 25px 0 25px;
-      grid-gap: 20px 10px;
-      margin-bottom: 42px;
+      grid-gap: 5px 10px;
+      margin-bottom: 27px;
     }
 
     &-button {
@@ -96,6 +96,7 @@
     transition: 0.5s;
     justify-content: space-between;
     align-items: center;
+    transition: 0.5s;
     
     @media screen and (max-width: $breakpoint-laptop-l) {
       justify-content: space-evenly;
@@ -133,6 +134,18 @@
 
     &:nth-child(3) .our-friends__column-image {
       background-image: url('../../../assets/images/pets-woody.png');
+    }
+
+    @media screen and (max-width: $breakpoint-laptop-l) {
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      &:nth-child(2) {
+        display: none;
+      }
     }
 
     &:hover {
