@@ -33,7 +33,7 @@
   }
 
   &__wrapper {
-    margin-bottom: 60px;
+    margin-bottom: 45px;
     display: grid;
     grid-template-columns: minmax(0px, 52px) minmax(150px, 990px) minmax(0px, 52px);
     justify-content: space-between;
@@ -61,6 +61,7 @@
       border: 2px solid $color-primary;
       transition: 0.6s;
       padding: 0;
+      margin-bottom: 15px;
 
       &:hover {
         background-color: $color-primary;
@@ -92,10 +93,10 @@
 
   &__container {
     display: flex;
+    transition: 0.5s;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-
+    
     @media screen and (max-width: $breakpoint-laptop-l) {
       justify-content: space-evenly;
     }
@@ -115,20 +116,23 @@
 
   &__column {
     height: 435px;
+    width: 270px;
     transition: 0.6s;
     border-radius: 9px;
     background-color: $color-light-s;
-    
+    margin-bottom: 15px;
+    display: block;
+
     &:nth-child(1) .our-friends__column-image {
-      background-image: url("../../../assets/images/pets-katrine.png");
+      background-image: url('../../../assets/images/pets-katrine.png');
     }
 
     &:nth-child(2) .our-friends__column-image {
-      background-image: url("../../../assets/images/pets-jennifer.png");
+      background-image: url('../../../assets/images/pets-jennifer.png');
     }
 
     &:nth-child(3) .our-friends__column-image {
-      background-image: url("../../../assets/images/pets-woody.png");
+      background-image: url('../../../assets/images/pets-woody.png');
     }
 
     &:hover {
@@ -136,17 +140,6 @@
       cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
     }
 
-    @media screen and (max-width: $breakpoint-laptop-l) {
-      &:nth-child(3) {
-        display: none;
-      }
-    }
-    @media screen and (max-width: $breakpoint-tablet) {
-      &:nth-child(2) {
-        display: none;
-      }
-    }
-    
     &-item {
       display: flex;
       flex-direction: column;
