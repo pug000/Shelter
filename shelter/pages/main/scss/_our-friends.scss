@@ -63,11 +63,6 @@
       padding: 0;
       margin-bottom: 15px;
 
-      &:hover {
-        background-color: $color-primary;
-        cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
-      }
-
       &:nth-child(1) {
         background-image: url("../../../assets/icons/Arrow-prev.svg");
 
@@ -87,6 +82,10 @@
           grid-row: 2;
           justify-self: end;
         }
+      }
+      &:hover {
+        background-color: $color-primary;
+        cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
       }
     }
   }
@@ -152,6 +151,16 @@
       cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
     }
 
+    &:hover .our-friends__column-button {
+      cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+      outline: 0;
+    }
+
+    &:hover .our-friends__column-button:after {
+      width: 110%;
+    }
+
+
     &-item {
       display: flex;
       flex-direction: column;
@@ -205,15 +214,6 @@
         height: 100%;
         z-index: -1;
         transition: width 0.4s ease-in-out;
-      }
-
-      &:hover {
-        cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
-        outline: 0;
-      }
-
-      &:hover:after {
-        width: 110%;
       }
     }
   }
