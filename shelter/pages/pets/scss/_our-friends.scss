@@ -57,14 +57,16 @@
         border: 2px solid $color-primary;
         width: 52px;
         height: 52px;
+        cursor: url("../../../assets//icons/cursor.svg"), auto;
       }
 
       &--empty {
         border: 2px solid $color-dark-s;
+        cursor: url("../../../assets//icons/cursor.svg"), auto;
 
         &:hover {
           background-color: $color-light-l;
-          cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+          cursor: url("../../../assets//icons/cursor.svg"), auto;
         }
 
         .icon {
@@ -162,7 +164,7 @@
     }
 
     &:nth-child(7) .our-friends__column-image {
-      background-image: url("../../../assets/images/pets-scarlet.png");
+      background-image: url("../../../assets/images/pets-scarlett.png");
     }
 
     &:nth-child(8) .our-friends__column-image {

@@ -1,4 +1,8 @@
-import { menuMainLinks, menuPetsLinks, header, help, footer, headerHeight, helpHeight, footerHeight } from "./variables.js";
+import { menuMainLinks, menuPetsLinks, header, help, footer } from "./variables.js";
+
+const headerHeight = header.clientHeight;
+const helpHeight = help.clientHeight;
+const footerHeight = footer.clientHeight;
 
 window.addEventListener('scroll', menuSwitchActive)
 

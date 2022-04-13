@@ -92,11 +92,10 @@
   }
 
   &__container {
-    display: flex;
     transition: 0.5s;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: 0.5s;
     
     @media screen and (max-width: $breakpoint-laptop-l) {
       justify-content: space-evenly;
