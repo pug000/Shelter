@@ -8,3 +8,6 @@ export const btnOurFriends = document.querySelector('.our-friends__content-butto
 export const header = document.querySelector('.header');
 export const help = document.querySelector('.help');
 export const footer = document.querySelector('.footer');
+export const slider = document.querySelector('.our-friends__slider');
+export const prevBtnSlider = document.querySelector('.our-friends__prev-button');
+export const nextBtnSlider = document.querySelector('.our-friends__next-button');

@@ -1,12 +1,12 @@
 import menuSwitchActive from "./js/menuActive.js";
-import { burgerMenuOpen, burgerMenuClose } from "./js/burgerMenu.js";
+import { burgerMenuOpen } from "./js/burgerMenu.js";
 import { btnNotOnly, btnOurFriends } from "./js/variables.js";
-
+import { createColumns } from './js/slider.js';
 
 window.onload = () => {
   menuSwitchActive;
   burgerMenuOpen;
-  burgerMenuClose;
+  createColumns;
 };
 
 btnNotOnly.onclick = () => {

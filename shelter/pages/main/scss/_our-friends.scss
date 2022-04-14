@@ -34,21 +34,20 @@
 
   &__wrapper {
     margin-bottom: 45px;
-    display: grid;
-    grid-template-columns: minmax(0px, 52px) minmax(150px, 990px) minmax(0px, 52px);
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px 0 40px;
+    padding: 0 100px 0 100px;
     grid-gap: 12px;
+    position: relative;
 
     @media screen and (max-width: $breakpoint-laptop-l) {
-      padding: 0 30px 0 30px;
+      padding: 0 75px 0 75px;
     }
     
     @media screen and (max-width: $breakpoint-mobile-l) {
       padding: 0 25px 0 25px;
       grid-gap: 5px 10px;
-      margin-bottom: 27px;
+      margin-bottom: 99px;
     }
 
     &-button {
@@ -61,26 +60,37 @@
       border: 2px solid $color-primary;
       transition: 0.6s;
       padding: 0;
-      margin-bottom: 15px;
+      position: absolute;
+      z-index: 10;
+
 
       &:nth-child(1) {
         background-image: url("../../../assets/icons/Arrow-prev.svg");
+        left: 3.1%;
+        top: 42.6%;
+
+        @media screen and (max-width: $breakpoint-laptop-l) {
+          left: 4%;
+        }
 
         @media screen and (max-width: $breakpoint-mobile-l) {
-          grid-column: 2;
-          grid-row: 2;
-          justify-self: start;
+          left: 21.2%;
+          top: 101%;
         }
       }
 
       &:nth-child(2) {
         background-image: url("../../../assets/icons/Arrow-next.svg");
-        order: 4;
+        right: 3.1%;
+        top: 42.6%;
 
+        @media screen and (max-width: $breakpoint-laptop-l) {
+          right: 4%;
+        }
+        
         @media screen and (max-width: $breakpoint-mobile-l) {
-          grid-column: 2;
-          grid-row: 2;
-          justify-self: end;
+          right: 21.2%;
+          top: 101%;
         }
       }
       &:hover {
@@ -91,25 +101,22 @@
   }
 
   &__container {
-    transition: 0.5s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    @media screen and (max-width: $breakpoint-laptop-l) {
-      justify-content: space-evenly;
-    }
+    max-width: 1080px;
+    overflow: hidden;
+  }
 
-    @media screen and (max-width: $breakpoint-tablet-l) {
-      justify-content: space-between;
+  &__slider {
+    display: grid;
+    grid-template-columns: repeat(99, 33.33%);
+    justify-content: start;
+    transition: 0.5s;
+
+    @media screen and (max-width: $breakpoint-laptop-l) {
+      grid-template-columns: repeat(99, 50%);
     }
 
     @media screen and (max-width: $breakpoint-tablet) {
-      justify-content: center;
-    }
-
-    @media screen and (max-width: $breakpoint-mobile-l) {
-      grid-column: 2;
+      grid-template-columns: repeat(99, 100%);
     }
   }
 
@@ -120,7 +127,7 @@
     border-radius: 9px;
     background-color: $color-light-s;
     margin-bottom: 15px;
-    display: block;
+    justify-self: center;
 
     &:nth-child(1) .our-friends__column-image {
       background-image: url('../../../assets/images/pets-katrine.png');
@@ -132,18 +139,6 @@
 
     &:nth-child(3) .our-friends__column-image {
       background-image: url('../../../assets/images/pets-woody.png');
-    }
-
-    @media screen and (max-width: $breakpoint-laptop-l) {
-      &:nth-child(3) {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: $breakpoint-tablet) {
-      &:nth-child(2) {
-        display: none;
-      }
     }
 
     &:hover {
@@ -159,7 +154,6 @@
     &:hover .our-friends__column-button:after {
       width: 110%;
     }
-
 
     &-item {
       display: flex;
