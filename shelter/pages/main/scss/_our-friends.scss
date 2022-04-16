@@ -1,6 +1,7 @@
 .our-friends {
   background-color: $color-light-l;
   padding-bottom: 101px;
+  position: relative;
 
   @media screen and (max-width: $breakpoint-mobile-l) {
     padding-bottom: 42px;
@@ -129,17 +130,17 @@
     margin-bottom: 15px;
     justify-self: center;
 
-    &:nth-child(1) .our-friends__column-image {
-      background-image: url('../../../assets/images/pets-katrine.png');
-    }
+    // &:nth-child(1) .our-friends__column-image {
+    //   background-image: url('../../../assets/images/pets-katrine.png');
+    // }
 
-    &:nth-child(2) .our-friends__column-image {
-      background-image: url('../../../assets/images/pets-jennifer.png');
-    }
+    // &:nth-child(2) .our-friends__column-image {
+    //   background-image: url('../../../assets/images/pets-jennifer.png');
+    // }
 
-    &:nth-child(3) .our-friends__column-image {
-      background-image: url('../../../assets/images/pets-woody.png');
-    }
+    // &:nth-child(3) .our-friends__column-image {
+    //   background-image: url('../../../assets/images/pets-woody.png');
+    // }
 
     &:hover {
       box-shadow: 15px 15px 10px -10px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(0, 0, 0, 0.1);
@@ -232,5 +233,227 @@
     letter-spacing: 1px;
     padding-top: 42px;
     margin-bottom: 40px;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: 0.5s;
+  z-index: -1;
+  opacity: 0;
+
+  &--active {
+    z-index: 25;
+    opacity: 1;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    &--active {
+      z-index: 20;
+      background-color: rgba(41, 41, 41, 0.6);
+    }
+  }
+
+  &__close-button {
+    background-image: url('../../../assets/icons/close-button.svg');
+    background-size: 12px 12px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 2px solid $color-primary;
+    border-radius: 100px;
+    width: 52px;
+    height: 52px;
+    z-index: 25;
+    transition: 0.5s;
+    align-self: flex-end;
+
+    &:hover {
+      cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+      background-color: $color-primary-light;
+    }
+  }
+
+  &__content {
+    position: relative;
+    top: 17.2vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 983px;
+    margin: 0 auto;
+    opacity: 0;
+    z-index: -1;
+
+    &--active {
+      z-index: 25;
+      opacity: 1;
+    }
+
+    @media screen and (max-width: $breakpoint-laptop-l) {
+      top: 22.2vh;
+      max-width: 720px;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      max-width: 430px;
+    }
+    
+    @media screen and (max-width: $breakpoint-mobile-l) {
+      max-width: 298px;
+      max-height: 393px;
+    }
+
+    &-inner {
+      max-width: 900px;
+      max-height: 500px;
+      width: 100%;
+      gap: 29px;
+      background-color: $color-light-s;
+      display: flex;
+      border-radius: 9px;
+      justify-content: space-between;
+      position: relative;
+      align-self: center;
+
+      @media screen and (max-width: $breakpoint-laptop-l) {
+        max-width: 630px;
+        max-height: 350px;
+        gap: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-tablet) {
+        max-width: 330px;
+        max-height: 370px;
+        justify-content: center;
+      }
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        max-width: 240px;
+        max-height: 341px;
+      }
+    }
+  }
+
+  &__content-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+
+    @media screen and (max-width: $breakpoint-laptop-l) {
+      max-width: 350px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 350px;
+    padding: 1px 20px 40px 0;
+    width: 100%;
+
+    @media screen and (max-width: $breakpoint-laptop-l) {
+      max-width: 270px;
+      padding: 10px 0 0 7px;
+      justify-content: flex-start;
+    }
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      text-align: center;
+      padding: 9px 10px 17px 10px;
+    }
+
+    &-pet-name {
+      @extend %fz-h3;
+      @extend %ff-Georgia-Regular;
+      color: $color-dark-4xl;
+      margin: 0;
+      letter-spacing: 0.06em;
+    }
+  
+    &-pet-breed {
+      @extend %fz-h4;
+      @extend %ff-Georgia-Regular;
+      margin: 0;
+      padding-top: 9px;
+      letter-spacing: 0.06em;
+
+      @media screen and (max-width: $breakpoint-laptop-l) {
+        padding: 9px 0 0 0;
+      }
+    }
+  
+    &-pet-description {
+      font-size: 15px;
+      line-height: 17px;
+      @extend %ff-Georgia-Regular;
+      margin: 0;
+      padding-top: 40px;
+      letter-spacing: 0.06em;
+
+      @media screen and (max-width: $breakpoint-laptop-l) {
+        font-size: 13px;
+        line-height: 14px;
+        padding: 22px 5px 0 0;
+      }
+
+      @media screen and (max-width: $breakpoint-tablet) {
+        text-align: justify;
+        padding: 22px 10px 0 10px;
+      }
+
+      @media screen and (max-width: $breakpoint-mobile-l) {
+        padding: 22px 0 0 0;
+      }
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      padding-top: 40px;
+      letter-spacing: 0.06em;
+
+      @media screen and (max-width: $breakpoint-laptop-l) {
+        padding: 24px 0 0 0;
+        gap: 6px;
+      }
+
+      @media screen and (max-width: $breakpoint-tablet) {
+        align-items: flex-start;
+      }
+    }
+  
+    &-pet-item {
+      font-size: 15px;
+      line-height: 17px;
+      @extend %ff-Georgia-Bold;
+
+      &:before {
+        content: "";
+        display: inline-flex;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $color-primary;
+        margin-right: 10px;
+        align-items: flex-end;
+      }
+  
+      & > span {
+        @extend %ff-Georgia-Regular;
+      }
+    }
   }
 }

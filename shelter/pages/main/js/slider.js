@@ -11,15 +11,15 @@ function getRandom() {
 };
 
 export function createColumns() {
-  let columnsActive = getRandom();
+  let columns = getRandom();
 
-  columnsActive.forEach((pet) => {
+  columns.forEach((pet) => {
     petsColumn +=
-      `<div class="our-friends__column">
-              <div class="our-friends__column-item">
-                <div class="our-friends__column-image" style="background-image: url(${pet.img});"></div>
-                <div class="our-friends__column-pets-name">${pet.name}</div>
-                <button class="our-friends__column-button">Learn more</button>
+      `<div class="our-friends__column ${pet.name}">
+              <div class="our-friends__column-item ${pet.name}">
+                <div class="our-friends__column-image ${pet.name}" style="background-image: url(${pet.img});"></div>
+                <div class="our-friends__column-pets-name ${pet.name}">${pet.name}</div>
+                <button class="our-friends__column-button ${pet.name}">Learn more</button>
               </div>
           </div>`
   });

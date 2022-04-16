@@ -20,5 +20,4 @@ function burgerMenuClose() {
   menuList.classList.remove('menu__list--active');
   menuOverlay.classList.remove('menu__overlay--active');
   document.body.classList.remove('lock');
-
 }
