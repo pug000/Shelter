@@ -1,3 +1,5 @@
+export const logo = document.querySelector('.logo');
+export const logoCopy = document.querySelector('.logo-copy');
 export const menuList = document.querySelector('.menu__list');
 export const menuMainLinks = document.querySelectorAll('.menu__list-item');
 export const menuPetsLinks = document.querySelectorAll('.menu__list-item-pets-page');

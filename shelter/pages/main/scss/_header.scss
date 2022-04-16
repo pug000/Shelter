@@ -18,9 +18,8 @@
 
     @media screen and (max-width: $breakpoint-tablet-s) {
       grid-template-columns: 187px 0px 30px;
-      padding: 31px 35px 20px 45px;
+      padding: 31px 53px 20px 45px;
       gap: 0;
-      justify-content: space-evenly;
     }
 
     @media screen and (max-width: $breakpoint-mobile) {
@@ -33,10 +32,14 @@
   .logo {
     display: flex;
     flex-direction: column;
-    z-index: 25;
+    opacity: 1;
+    transition: 0.5s;
+
+    &--hidden {
+      opacity: 0;
+    }
 
     &__link {
-      cursor: pointer;
       cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
     }
 
@@ -54,6 +57,24 @@
       color: $color-light-xl;
       padding-left: 2px;
       letter-spacing: 1px;
+    }
+  }
+
+  .logo-copy {
+    display: flex;
+    flex-direction: column;
+    z-index: 25;
+    position: absolute;
+    left: 17%;
+    opacity: 1;
+    transition: 0.5s;
+
+    &--hidden {
+      opacity: 0;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      left: 3%;
     }
   }
 
