@@ -1,9 +1,22 @@
 import pets from './pets.json' assert {type: 'json'};
-import { popup, popupOverlay, popupBtn, popupContent, popupContentInner, slider, popupImage, popupItems, popupPetDescription, popupPetBreed, popupPetName, popupContainer } from "./variables.js";
+import { popup, popupOverlay, popupBtn, popupContent, popupContentInner, slider } from "./variables.js";
 
 
-let columns = Array.from(slider.children).map(elem => elem);
+const popupImage = document.createElement('img');
+const popupContainer = document.createElement('div');
+const popupPetName = document.createElement('div');
+const popupPetBreed = document.createElement('div');
+const popupPetDescription = document.createElement('div');
+const popupItems = document.createElement('div');
+popupContentInner.appendChild(popupImage).classList.add('popup__content-image');
+popupContentInner.appendChild(popupContainer).classList.add('popup__container');
+popupContainer.appendChild(popupPetName).classList.add('popup__container-pet-name');
+popupContainer.appendChild(popupPetBreed).classList.add('popup__container-pet-breed');
+popupContainer.appendChild(popupPetDescription).classList.add('popup__container-pet-description');
+popupContainer.appendChild(popupItems).classList.add('popup__container-items');
 
+
+let columns = Array.from(slider.childNodes).map(elem => elem);
 
 export function openPopup(event) {
   pets.forEach((elem) => {

@@ -109,7 +109,7 @@
   &__slider {
     display: grid;
     grid-template-columns: repeat(99, 33.33%);
-    justify-content: start;
+    justify-content: space-between;
     transition: 0.5s;
 
     @media screen and (max-width: $breakpoint-laptop-l) {

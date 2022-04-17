@@ -18,7 +18,7 @@ menuMainLinks.forEach((elem) => elem.addEventListener('click', burgerMenuClose))
 menuPetsLinks.forEach((elem) => elem.addEventListener('click', burgerMenuClose));
 menuOverlay.addEventListener('click', burgerMenuClose);
 
-function burgerMenuClose() {
+export function burgerMenuClose() {
   burgerMenuBtn.classList.remove('menu__burger-button--active');
   menuList.classList.remove('menu__list--active');
   logo.classList.remove('logo--hidden');
