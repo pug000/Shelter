@@ -1,7 +1,6 @@
 import pets from './pets.json' assert {type: 'json'};
 import { popup, popupOverlay, popupBtn, popupContent, popupContentInner, slider } from "./variables.js";
 
-
 const popupImage = document.createElement('img');
 const popupContainer = document.createElement('div');
 const popupPetName = document.createElement('div');
@@ -14,9 +13,6 @@ popupContainer.appendChild(popupPetName).classList.add('popup__container-pet-nam
 popupContainer.appendChild(popupPetBreed).classList.add('popup__container-pet-breed');
 popupContainer.appendChild(popupPetDescription).classList.add('popup__container-pet-description');
 popupContainer.appendChild(popupItems).classList.add('popup__container-items');
-
-
-let columns = Array.from(slider.childNodes).map(elem => elem);
 
 export function openPopup(event) {
   pets.forEach((elem) => {
@@ -31,7 +27,7 @@ export function openPopup(event) {
   });
 };
 
-function load() {
+export function resizePopup() {
   if (window.innerWidth >= 768) {
     popupImage.style.display = 'block';
   }
@@ -39,12 +35,6 @@ function load() {
     popupImage.style.display = 'none';
   };
 };
-
-load();
-
-window.addEventListener('resize', () => {
-  load();
-});
 
 
 function createPopup(pet) {
@@ -60,14 +50,10 @@ function createPopup(pet) {
 };
 
 
-function closePopup() {
+export function closePopup() {
   popupOverlay.classList.remove('popup__overlay--active');
   popup.classList.remove('popup--active');
   popupContent.classList.remove('popup__content--active');
   popupContentInner.classList.remove('popup__content-inner--active');
   document.body.classList.remove('lock');
 };
-
-columns.forEach((elem) => elem.addEventListener('click', openPopup));
-popupOverlay.addEventListener('click', closePopup);
-popupBtn.addEventListener('click', closePopup);

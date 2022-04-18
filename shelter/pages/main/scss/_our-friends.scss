@@ -301,7 +301,7 @@
     }
 
     @media screen and (max-width: $breakpoint-767) {
-      max-width: 430px;
+      max-width: 300px;
     }
 
     &-inner {
@@ -323,8 +323,8 @@
       }
 
       @media screen and (max-width: $breakpoint-767) {
-        max-width: 330px;
-        max-height: 370px;
+        max-width: 240px;
+        max-height: 380px;
         justify-content: center;
       }
     }
@@ -356,7 +356,7 @@
 
     @media screen and (max-width: $breakpoint-767) {
       text-align: center;
-      padding: 9px 10px 17px 10px;
+      padding: 9px 0 17px 0;
     }
 
     &-pet-name {
@@ -395,7 +395,7 @@
 
       @media screen and (max-width: $breakpoint-767) {
         text-align: justify;
-        padding: 22px 10px 0 10px;
+        padding: 22px 5px 0 5px;
       }
     }
 
@@ -413,6 +413,8 @@
 
       @media screen and (max-width: $breakpoint-767) {
         align-items: flex-start;
+        text-align: left;
+        padding: 24px 0 0 11px;
       }
     }
 

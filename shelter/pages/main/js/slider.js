@@ -1,62 +1,71 @@
-import pets from './pets.json' assert {type: 'json'};
-import { slider, prevBtnSlider, nextBtnSlider } from './variables.js';
+import { slider, prevBtnSlider, nextBtnSlider, popupOverlay, popupBtn } from './variables.js';
+import { openPopup, closePopup, resizePopup } from './popup.js';
 
 let position = 0;
 const movePosition = 100;
 let columnLength = 3;
-let columnWidth = 33.33;
 
-// fetch('./js/pets.json')
-//   .then(res => res.json())
-//   .then(parse => {
-//     return parse.map((elem) => {
-//       return elem;
-//     })
-//   })
-//   .then(data => {
-//     window.addEventListener('resize', load);
-//     load();
-//     getRandom(data);
-//     renderColumns(data);
+fetch('./js/pets.json')
+  .then(res => res.json())
+  .then(parse => {
+    return parse.map((elem) => {
+      return elem;
+    })
+  })
+  .then(data => {
+    getRandom(data);
+    renderColumns(data);
 
-//     prevBtnSlider.onclick = () => {
-//       renderColumns(data);
-//       createPrevColumns();
-//     }
+    prevBtnSlider.onclick = () => {
+      let arr = createColumns(data).slice(0, columnLength);
+      arr.forEach((elem) => {
+        slider.prepend(elem);
+      })
+      createPrevColumns();
+    }
 
-//     nextBtnSlider.onclick = () => {
-//       renderColumns(data);
-//       createNextColumns();
-//     };
-//   });
+    nextBtnSlider.onclick = () => {
+      let arr = createColumns(data).slice(0, columnLength);
+      arr.forEach((elem) => {
+        slider.append(elem);
+      })
+      createNextColumns();
+    };
 
-// window.addEventListener('resize', load);
-// load();
-getRandom(pets);
-renderColumns(pets);
+    window.addEventListener('resize', resizePopup);
+    resizePopup();
+    resizeSlider();
 
-prevBtnSlider.onclick = () => {
-  renderColumns(pets);
-  createPrevColumns();
-}
+    [...slider.childNodes].forEach((elem) => elem.addEventListener('click', openPopup));
+    popupOverlay.addEventListener('click', closePopup);
+    popupBtn.addEventListener('click', closePopup);
+    window.addEventListener('resize', () => resizePopup());
+  });
 
-nextBtnSlider.onclick = () => {
-  renderColumns(pets);
-  createNextColumns();
-};
+// // window.addEventListener('resize', load);
+// // load();
+// getRandom(pets);
+// renderColumns(pets);
 
-function load() {
+// prevBtnSlider.onclick = () => {
+//   renderColumns(pets);
+//   createPrevColumns();
+// }
+
+// nextBtnSlider.onclick = () => {
+//   renderColumns(pets);
+//   createNextColumns();
+// };
+
+function resizeSlider() {
   if (window.innerWidth >= 1280) {
     columnLength = 3;
-    columnWidth = 33.33;
   }
   if (window.innerWidth >= 768 && window.innerWidth <= 1279) {
     columnLength = 2;
-    columnWidth = 50;
   }
   if (window.innerWidth <= 750) {
     columnLength = 1;
-    columnWidth = 100;
   }
 }
 
@@ -92,8 +101,7 @@ export function createColumns(data) {
 };
 
 function renderColumns(data) {
-  let arr = createColumns(data).slice(0, columnLength);
-  let columns = slider.children;
+  let arr = createColumns(data);
   arr.forEach((elem) => {
     slider.append(elem);
     // slider.style.gridTemplateColumns = `repeat(${columns.length}, ${columnWidth}%)`;
