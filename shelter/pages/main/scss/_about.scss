@@ -5,7 +5,7 @@
   flex-direction: column;
   margin-bottom: 77px;
 
-  @media screen and (max-width: $breakpoint-mobile-l) {
+  @media screen and (max-width: $breakpoint-767) {
     margin-bottom: 18px;
   }
 
@@ -16,24 +16,26 @@
     gap: 120px;
     margin-bottom: 20px;
 
-    @media screen and (max-width: $breakpoint-tablet-l) {
-      padding: 0 25px 0 25px;
-      gap: 73px;
+    @media screen and (max-width: $breakpoint-1279) {
       flex-direction: column;
+      gap: 71px;
     }
 
-    @media screen and (max-width: $breakpoint-mobile-l) {
+    @media screen and (max-width: $breakpoint-767) {
+      padding: 0 25px 0 25px;
       gap: 33px;
+      flex-direction: column;
     }
 
     &-img {
       padding-top: 5px;
-      @media screen and (max-width: $breakpoint-tablet-l) {
+
+      @media screen and (max-width: $breakpoint-1279) {
         padding-top: 7px;
         order: 2;
       }
     }
-    
+
     img {
       width: 100%;
     }
@@ -57,7 +59,7 @@
       color: $color-dark-xl;
       margin: 24px 0 1px 0;
 
-      @media screen and (max-width: $breakpoint-mobile-l) {
+      @media screen and (max-width: $breakpoint-767) {
         text-align: justify;
         margin: 23px 0 0px 0;
       }
@@ -74,7 +76,7 @@
   letter-spacing: 2px;
   text-align: left;
 
-  @media screen and (max-width: $breakpoint-mobile-l) {
+  @media screen and (max-width: $breakpoint-767) {
     font-size: 26px;
     line-height: 33px;
     align-self: center;

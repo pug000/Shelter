@@ -1,19 +1,18 @@
 .help {
   margin-bottom: 99px;
 
-  @media screen and (max-width: $breakpoint-mobile-l) {
+  @media screen and (max-width: $breakpoint-767) {
     margin-bottom: 41px;
   }
 
   &__wrapper {
-
     padding: 0 22px 0 22px;
 
-    @media screen and (max-width: $breakpoint-laptop-l) {
-      padding: 0 9px 0 9px;
+    @media screen and (max-width: $breakpoint-1279) {
+      padding: 0 13px 0 13px;
     }
 
-    @media screen and (max-width: $breakpoint-mobile-l) {
+    @media screen and (max-width: $breakpoint-767) {
       padding: 0 15px 0 22px;
     }
 
@@ -23,14 +22,14 @@
       flex-wrap: wrap;
       gap: 55px 122px;
 
-      @media screen and (max-width: $breakpoint-laptop-l) {
+      @media screen and (max-width: $breakpoint-1279) {
         display: grid;
         grid-template-columns: repeat(3, 170px);
         grid-gap: 55px 0px;
         justify-content: space-evenly;
       }
 
-      @media screen and (max-width: $breakpoint-mobile-l) {
+      @media screen and (max-width: $breakpoint-767) {
         grid-template-columns: repeat(2, minmax(auto, 130px));
         grid-gap: 29px 37px;
       }
@@ -43,7 +42,7 @@
       align-items: center;
       gap: 30px;
 
-      @media screen and (max-width: $breakpoint-mobile-l) {
+      @media screen and (max-width: $breakpoint-767) {
         gap: 21px;
       }
 
@@ -91,12 +90,12 @@
       background-position: center center;
       background-size: contain;
 
-      @media screen and (max-width: $breakpoint-mobile-l) {
+      @media screen and (max-width: $breakpoint-767) {
         max-width: 50px;
         max-height: 50px;
       }
     }
-    
+
     &-text {
       @extend %ff-Georgia-Regular;
       @extend %fz-h4;
@@ -104,7 +103,7 @@
       letter-spacing: 1px;
       margin: 0;
 
-      @media screen and (max-width: $breakpoint-mobile-l) {
+      @media screen and (max-width: $breakpoint-767) {
         font-size: 15px;
         line-height: 17px;
       }

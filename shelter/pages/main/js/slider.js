@@ -30,8 +30,8 @@ let columnWidth = 33.33;
 //     };
 //   });
 
-window.addEventListener('resize', load);
-load();
+// window.addEventListener('resize', load);
+// load();
 getRandom(pets);
 renderColumns(pets);
 
@@ -46,11 +46,11 @@ nextBtnSlider.onclick = () => {
 };
 
 function load() {
-  if (window.innerWidth >= 1101) {
+  if (window.innerWidth >= 1280) {
     columnLength = 3;
     columnWidth = 33.33;
   }
-  if (window.innerWidth >= 751 && window.innerWidth <= 1100) {
+  if (window.innerWidth >= 768 && window.innerWidth <= 1279) {
     columnLength = 2;
     columnWidth = 50;
   }
@@ -58,7 +58,6 @@ function load() {
     columnLength = 1;
     columnWidth = 100;
   }
-  slider.style.gridTemplateColumns = `repeat(${slider.children.length}, ${columnWidth}%)`
 }
 
 function getRandom(data) {
@@ -97,7 +96,7 @@ function renderColumns(data) {
   let columns = slider.children;
   arr.forEach((elem) => {
     slider.append(elem);
-    slider.style.gridTemplateColumns = `repeat(${columns.length}, ${columnWidth}%)`;
+    // slider.style.gridTemplateColumns = `repeat(${columns.length}, ${columnWidth}%)`;
   })
 
 }

@@ -32,10 +32,10 @@ export function openPopup(event) {
 };
 
 function load() {
-  if (window.innerWidth >= 751) {
+  if (window.innerWidth >= 768) {
     popupImage.style.display = 'block';
   }
-  if (window.innerWidth <= 750) {
+  if (window.innerWidth <= 767) {
     popupImage.style.display = 'none';
   };
 };

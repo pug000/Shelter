@@ -3,7 +3,7 @@
   top: 0;
   z-index: 5;
 
-  @media screen and (max-width: $breakpoint-tablet-l) {
+  @media screen and (max-width: $breakpoint-767) {
     position: relative;
   }
 
@@ -15,24 +15,23 @@
     gap: 20px;
     background-color: $color-light-xl;
 
-    @media screen and (max-width: $breakpoint-tablet-l) {
+    @media screen and (max-width: $breakpoint-1279) {
       padding: 30px 30px 10px 30px;
     }
 
-    @media screen and (max-width: $breakpoint-tablet) {
-      padding: 30px 10px 10px 30px;
-    }
-
-    @media screen and (max-width: $breakpoint-tablet-s) {
+    @media screen and (max-width: $breakpoint-767) {
       grid-template-columns: 187px 0px 30px;
       padding: 31px 35px 20px 45px;
       gap: 0;
     }
 
-    @media screen and (max-width: $breakpoint-mobile) {
-      justify-content: start;
-      gap: 20px;
-      padding: 31px 15px 20px 10px;
+    @media screen and (max-width: $breakpoint-767) {
+      gap: 0px;
+      padding: 31px 53px 20px 30px;
+    }
+
+    @media screen and (max-width: $breakpoint-374) {
+      padding: 30px 53px 20px 10px;
     }
   }
 
@@ -80,7 +79,7 @@
       opacity: 0;
     }
 
-    @media screen and (max-width: $breakpoint-mobile) {
+    @media screen and (max-width: $breakpoint-374) {
       left: 3%;
     }
   }
@@ -92,7 +91,7 @@
       list-style-type: none;
       padding: 0;
 
-      @media screen and (max-width: $breakpoint-tablet-s) {
+      @media screen and (max-width: $breakpoint-767) {
         position: fixed;
         overflow: hidden;
         right: 0;
@@ -120,7 +119,7 @@
           transform: translateX(0);
         }
 
-        @media screen and (max-width: $breakpoint-mobile) {
+        @media screen and (max-width: $breakpoint-374) {
           width: 100vw;
         }
       }
@@ -129,11 +128,10 @@
         @extend %ff-Arial-Regular;
         @extend %fz-text;
         color: $color-dark-l;
-        cursor: pointer;
         cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
         transition: 0.6s;
 
-        @media screen and (max-width: $breakpoint-tablet-s) {
+        @media screen and (max-width: $breakpoint-767) {
           font-size: 32px;
           line-height: 51px;
         }
@@ -150,11 +148,10 @@
           @extend %ff-Arial-Regular;
           @extend %fz-text;
           color: $color-dark-l;
-          cursor: pointer;
           cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
           transition: 0.6s;
 
-          @media screen and (max-width: $breakpoint-tablet-s) {
+          @media screen and (max-width: $breakpoint-767) {
             font-size: 32px;
             line-height: 51px;
           }
@@ -197,7 +194,7 @@
         &:hover::after {
           width: 100%;
         }
-        
+
         &--active::after {
           width: 100%;
         }
@@ -218,28 +215,29 @@
       justify-self: flex-end;
       justify-content: center;
       align-self: center;
-  
+      cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+
       &--active {
         transform: rotate(90deg);
       }
 
-      @media screen and (max-width: $breakpoint-tablet-s) {
+      @media screen and (max-width: $breakpoint-767) {
         display: flex;
       }
     }
 
     &__overlay {
-      @media screen and (max-width: $breakpoint-tablet-s) {
+      @media screen and (max-width: $breakpoint-767) {
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: -1;
-        opacity: 0;
+        z-index: 10;
 
         &--active {
-          z-index: 20;
+          display: block;
           background-color: rgba(41, 41, 41, 0.6);
         }
       }

@@ -17,8 +17,11 @@ html {
   a {
     text-decoration: none;
   }
-  
+
   body {
     max-width: 1280px;
+  }
+  body.lock {
+    overflow: hidden;
   }
 }
