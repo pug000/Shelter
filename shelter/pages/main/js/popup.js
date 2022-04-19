@@ -1,5 +1,4 @@
-import pets from './pets.json' assert {type: 'json'};
-import { popup, popupOverlay, popupContent, popupContentInner, slider } from "./variables.js";
+import { popup, popupOverlay, popupContent, popupContentInner } from "./variables.js";
 
 const popupImage = document.createElement('img');
 const popupContainer = document.createElement('div');

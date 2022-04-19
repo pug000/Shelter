@@ -20,6 +20,14 @@
     @media screen and (max-width: $breakpoint-767) {
       grid-gap: 34px;
     }
+
+    &-image {
+      padding-top: 40px;
+
+      @media screen and (max-width: $breakpoint-1279) {
+        padding-top: 0;
+      }
+    }
   }
 
   &__container {

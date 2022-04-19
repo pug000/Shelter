@@ -41,6 +41,10 @@
     grid-gap: 12px;
     position: relative;
 
+    @media screen and (max-width: $breakpoint-1279) {
+      padding: 0 77px 0 77px;
+    }
+
     @media screen and (max-width: $breakpoint-767) {
       padding: 0 25px 0 25px;
       grid-gap: 5px 10px;
@@ -125,17 +129,17 @@
     margin-bottom: 15px;
     justify-self: center;
 
-    // &:nth-child(1) .our-friends__column-image {
-    //   background-image: url("../../../assets/images/pets-katrine.png");
-    // }
+    &:nth-child(1) .our-friends__column-image {
+      background-image: url("../../../assets/images/pets-katrine.png");
+    }
 
-    // &:nth-child(2) .our-friends__column-image {
-    //   background-image: url("../../../assets/images/pets-jennifer.png");
-    // }
+    &:nth-child(2) .our-friends__column-image {
+      background-image: url("../../../assets/images/pets-jennifer.png");
+    }
 
-    // &:nth-child(3) .our-friends__column-image {
-    //   background-image: url("../../../assets/images/pets-woody.png");
-    // }
+    &:nth-child(3) .our-friends__column-image {
+      background-image: url("../../../assets/images/pets-woody.png");
+    }
 
     &:hover {
       box-shadow: 15px 15px 10px -10px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(0, 0, 0, 0.1);

@@ -3,6 +3,10 @@
   background-image: url("../../../assets/images/noise_transparent@2x.png"),
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
 
+  @media screen and (max-width: $breakpoint-767) {
+    padding: 0;
+  }
+
   &__content {
     justify-content: space-between;
     display: flex;
@@ -15,6 +19,13 @@
 
     @media screen and (max-width: $breakpoint-767) {
       gap: 32px;
+    }
+
+    &-image {
+      padding-top: 40px;
+      @media screen and (max-width: $breakpoint-1279) {
+        padding-top: 0;
+      }
     }
   }
 
