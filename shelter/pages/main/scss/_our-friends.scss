@@ -100,23 +100,20 @@
     }
   }
 
-  &__container {
+  &__carousel {
     max-width: 1080px;
     overflow: hidden;
-  }
 
-  &__slider {
-    display: grid;
-    grid-template-columns: repeat(99, 33.33%);
-    justify-content: space-between;
-    transition: 0.5s;
-
-    @media screen and (max-width: $breakpoint-1279) {
-      grid-template-columns: repeat(99, 50%);
+    &-track {
+      display: flex;
+      justify-content: center;
+      position: relative;
     }
 
-    @media screen and (max-width: $breakpoint-767) {
-      grid-template-columns: repeat(99, 100%);
+    &-slides {
+      display: flex;
+      justify-content: space-around;
+      flex: 0 0 100%;
     }
   }
 
@@ -128,18 +125,6 @@
     background-color: $color-light-s;
     margin-bottom: 15px;
     justify-self: center;
-
-    &:nth-child(1) .our-friends__column-image {
-      background-image: url("../../../assets/images/pets-katrine.png");
-    }
-
-    &:nth-child(2) .our-friends__column-image {
-      background-image: url("../../../assets/images/pets-jennifer.png");
-    }
-
-    &:nth-child(3) .our-friends__column-image {
-      background-image: url("../../../assets/images/pets-woody.png");
-    }
 
     &:hover {
       box-shadow: 15px 15px 10px -10px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(0, 0, 0, 0.1);
@@ -443,4 +428,32 @@
       }
     }
   }
+}
+
+@keyframes move-left {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes move-right {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 1s;
+}
+
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 1s;
 }

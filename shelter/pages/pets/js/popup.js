@@ -17,7 +17,7 @@ popupContainer.appendChild(popupItems).classList.add('popup__container-items');
 
 export function openPopup(event) {
   pets.forEach((elem) => {
-    if (event.target.classList.contains(`${elem.name}`)) {
+    if (event.target.id === `${elem.name}`) {
       document.body.classList.add('lock');
       popup.classList.add('popup--active');
       popupContent.classList.add('popup__content--active');
