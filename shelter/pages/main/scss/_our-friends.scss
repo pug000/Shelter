@@ -125,6 +125,19 @@
     background-color: $color-light-s;
     margin-bottom: 15px;
     justify-self: center;
+    display: block;
+
+    @media screen and (max-width: $breakpoint-1279) {
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-767) {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
 
     &:hover {
       box-shadow: 15px 15px 10px -10px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(0, 0, 0, 0.1);
