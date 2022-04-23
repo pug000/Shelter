@@ -1,8 +1,8 @@
 export const logo = document.querySelector('.logo');
 export const logoCopy = document.querySelector('.logo-copy');
-export const menuList = document.querySelector('.menu__list');
-export const menuMainLinks = document.querySelectorAll('.menu__list-item');
-export const menuPetsLinks = document.querySelectorAll('.menu__list-item-pets-page');
+export const burgerMenu = document.querySelector('.burger-menu');
+export const menuMainLinks = document.querySelectorAll('.burger-menu__list-item');
+export const menuPetsLinks = document.querySelectorAll('.burger-menu__list-item-pets-page');
 export const burgerMenuBtn = document.querySelector('.menu__burger-button');
 export const menuOverlay = document.querySelector('.menu__overlay');
 export const btnNotOnly = document.querySelector('.not-only__content-button');

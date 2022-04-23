@@ -17,9 +17,9 @@ function menuSwitchActive() {
   }
 
   menuPetsLinks.forEach(elem => {
-    elem.classList.remove('menu__list-item--active');
+    elem.classList.remove('burger-menu__list-item-pets-page--active');
     if (elem.getAttribute('href').replace(/#*(?=\.)/, '').slice(1) === current) {
-      elem.classList.add('menu__list-item--active');
+      elem.classList.add('burger-menu__list-item-pets-page--active');
     }
   })
 }

@@ -13,7 +13,6 @@ popupTrigger();
 
 function popupTrigger() {
   slides.forEach((elem) => [...elem.children].forEach((child) => {
-    console.log(child);
     child.addEventListener('click', openPopup);
   }));
 
