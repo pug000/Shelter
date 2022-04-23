@@ -9,14 +9,19 @@ resizeSlider();
 window.addEventListener('resize', () => resizeSlider());
 setColumns();
 resizePopup();
+popupTrigger();
 
-slides.forEach((elem) => [...elem.children].forEach((child) => {
-  child.addEventListener('click', openPopup);
-}));
+function popupTrigger() {
+  slides.forEach((elem) => [...elem.children].forEach((child) => {
+    console.log(child);
+    child.addEventListener('click', openPopup);
+  }));
 
-popupOverlay.addEventListener('click', closePopup);
-popupBtn.addEventListener('click', closePopup);
-window.addEventListener('resize', () => resizePopup());
+  popupOverlay.addEventListener('click', closePopup);
+  popupBtn.addEventListener('click', closePopup);
+  window.addEventListener('resize', () => resizePopup());
+}
+
 
 function resizeSlider() {
   if (window.offsetWidth >= 1280) {
@@ -102,6 +107,8 @@ function changeSlides(animationEvent) {
 
   prevBtnSlides.addEventListener('click', moveLeft);
   nextBtnSlides.addEventListener('click', moveRight);
+
+  popupTrigger();
 };
 
 function createTemplateColumns() {
