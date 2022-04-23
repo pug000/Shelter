@@ -326,7 +326,7 @@
 
       @media screen and (max-width: $breakpoint-767) {
         max-width: 240px;
-        max-height: 380px;
+        max-height: 400px;
         justify-content: center;
       }
     }
@@ -416,7 +416,7 @@
       @media screen and (max-width: $breakpoint-767) {
         align-items: flex-start;
         text-align: left;
-        padding: 24px 0 0 11px;
+        padding: 18px 0 0 11px;
       }
     }
 
