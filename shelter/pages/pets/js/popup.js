@@ -6,7 +6,7 @@ const popupContainer = document.createElement('div');
 const popupPetName = document.createElement('div');
 const popupPetBreed = document.createElement('div');
 const popupPetDescription = document.createElement('div');
-const popupItems = document.createElement('div');
+const popupItems = document.createElement('ul');
 popupContentInner.appendChild(popupImage).classList.add('popup__content-image');
 popupContentInner.appendChild(popupContainer).classList.add('popup__container');
 popupContainer.appendChild(popupPetName).classList.add('popup__container-pet-name');
@@ -18,7 +18,7 @@ popupContainer.appendChild(popupItems).classList.add('popup__container-items');
 export function openPopup(event) {
   pets.forEach((elem) => {
     if (event.target.id === `${elem.name}`) {
-      document.body.classList.add('lock');
+      document.body.style.overflow = 'hidden';
       popup.classList.add('popup--active');
       popupContent.classList.add('popup__content--active');
       popupOverlay.classList.add('popup__overlay--active');
@@ -44,10 +44,10 @@ function createPopup(pet) {
   popupPetBreed.innerText = `${pet.type} - ${pet.breed}`;
   popupPetDescription.innerText = `${pet.description}`;
   popupItems.innerHTML =
-    `<div class="popup__container-pet-item popup__container-pet-age">Age: <span>${pet.age}</span></div>
-  <div class="popup__container-pet-item popup__container-pet-inoculation">Inoculations: <span>${pet.inoculations}</span></div>
-  <div class="popup__container-pet-item popup__container-pet-diseases">Diseases: <span>${pet.diseases}</span></div>
-  <div class="popup__container-pet-item popup__container-pet-parasites">Parasites: <span>${pet.parasites}</span></div>`
+    `<li class="popup__container-pet-item popup__container-pet-age"><p class="popup__container-pet-item-text">Age: <span>${pet.age}</span></p></li>
+  <li class="popup__container-pet-item popup__container-pet-inoculation"><p class="popup__container-pet-item-text">Inoculations: <span>${pet.inoculations}</span></p></li>
+  <li class="popup__container-pet-item popup__container-pet-diseases"><p class="popup__container-pet-item-text">Diseases: <span>${pet.diseases}</span></p></li>
+  <li class="popup__container-pet-item popup__container-pet-parasites"><p class="popup__container-pet-item-text">Parasites: <span>${pet.parasites}</span></p></li>`
 };
 
 
@@ -56,5 +56,5 @@ export function closePopup() {
   popup.classList.remove('popup--active');
   popupContent.classList.remove('popup__content--active');
   popupContentInner.classList.remove('popup__content-inner--active');
-  document.body.classList.remove('lock');
+  document.body.style.overflow = '';
 };

@@ -3,7 +3,7 @@ import { burgerMenu, menuMainLinks, menuPetsLinks, burgerMenuBtn, menuOverlay, l
 window.addEventListener('resize', () => resizeBurgerMenu());
 
 function resizeBurgerMenu() {
-  if (window.innerWidth > 767) {
+  if (window.innerWidth === 768) {
     burgerMenuClose();
   }
 }
@@ -30,5 +30,5 @@ export function burgerMenuClose() {
   logo.classList.remove('logo--hidden');
   logoCopy.classList.add('logo-copy--hidden');
   menuOverlay.classList.remove('menu__overlay--active');
-  document.body.classList.toggle('lock');
+  document.body.classList.remove('lock');
 };

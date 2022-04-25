@@ -3,7 +3,7 @@ import { burgerMenu, menuMainLinks, menuPetsLinks, burgerMenuBtn, menuOverlay, l
 window.addEventListener('resize', () => resizeBurgerMenu());
 
 function resizeBurgerMenu() {
-  if (window.innerWidth > 767) {
+  if (window.innerWidth === 768) {
     burgerMenuClose();
   }
 }

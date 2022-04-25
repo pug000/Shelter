@@ -17,7 +17,7 @@ popupContainer.appendChild(popupItems).classList.add('popup__container-items');
 export function openPopup(event) {
   pets.forEach((elem) => {
     if (event.target.id === `${elem.name}`) {
-      document.body.classList.add('lock');
+      document.body.style.overflow = 'hidden';
       popup.classList.add('popup--active');
       popupContent.classList.add('popup__content--active');
       popupOverlay.classList.add('popup__overlay--active');
@@ -55,5 +55,5 @@ export function closePopup() {
   popup.classList.remove('popup--active');
   popupContent.classList.remove('popup__content--active');
   popupContentInner.classList.remove('popup__content-inner--active');
-  document.body.classList.remove('lock');
+  document.body.style.overflow = '';
 };
