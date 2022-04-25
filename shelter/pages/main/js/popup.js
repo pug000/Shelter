@@ -43,10 +43,10 @@ function createPopup(pet) {
   popupPetBreed.innerText = `${pet.type} - ${pet.breed}`;
   popupPetDescription.innerText = `${pet.description}`;
   popupItems.innerHTML =
-    `<div class="popup__container-pet-item popup__container-pet-age">Age: <span>${pet.age}</span></div>
-  <div class="popup__container-pet-item popup__container-pet-inoculation">Inoculations: <span>${pet.inoculations}</span></div>
-  <div class="popup__container-pet-item popup__container-pet-diseases">Diseases: <span>${pet.diseases}</span></div>
-  <div class="popup__container-pet-item popup__container-pet-parasites">Parasites: <span>${pet.parasites}</span></div>`
+    `<li class="popup__container-pet-item popup__container-pet-age"><p class="popup__container-pet-item-text">Age: <span>${pet.age}</span></p></li>
+  <li class="popup__container-pet-item popup__container-pet-inoculation"><p class="popup__container-pet-item-text">Inoculations: <span>${pet.inoculations}</span></p></li>
+  <li class="popup__container-pet-item popup__container-pet-diseases"><p class="popup__container-pet-item-text">Diseases: <span>${pet.diseases}</span></p></li>
+  <li class="popup__container-pet-item popup__container-pet-parasites"><p class="popup__container-pet-item-text">Parasites: <span>${pet.parasites}</span></p></li>`
 };
 
 
