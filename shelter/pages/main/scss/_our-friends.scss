@@ -293,6 +293,7 @@
 
     &:hover {
       cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+      background-color: $color-primary-light;
     }
   }
 
@@ -466,4 +467,32 @@
       }
     }
   }
+}
+
+@keyframes move-left {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes move-right {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 1s;
+}
+
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 1s;
 }
