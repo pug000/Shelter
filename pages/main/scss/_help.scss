@@ -1,0 +1,112 @@
+.help {
+  margin-bottom: 99px;
+
+  @media screen and (max-width: $breakpoint-767) {
+    margin-bottom: 41px;
+  }
+
+  &__wrapper {
+    padding: 0 22px 0 22px;
+
+    @media screen and (max-width: $breakpoint-1279) {
+      padding: 0 13px 0 13px;
+    }
+
+    @media screen and (max-width: $breakpoint-767) {
+      padding: 0 15px 0 22px;
+    }
+
+    &-items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 55px 122px;
+
+      @media screen and (max-width: $breakpoint-1279) {
+        display: grid;
+        grid-template-columns: repeat(3, 170px);
+        grid-gap: 55px 0px;
+        justify-content: space-evenly;
+      }
+
+      @media screen and (max-width: $breakpoint-767) {
+        grid-template-columns: repeat(2, minmax(auto, 130px));
+        grid-gap: 29px 37px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+
+      @media screen and (max-width: $breakpoint-767) {
+        gap: 21px;
+      }
+
+      &:nth-child(1) .help__wrapper-image {
+        background-image: url("../../../assets/icons/pet-food.svg");
+      }
+
+      &:nth-child(2) .help__wrapper-image {
+        background-image: url("../../../assets/icons/transportation.svg");
+      }
+
+      &:nth-child(3) .help__wrapper-image {
+        background-image: url("../../../assets/icons/toys.svg");
+      }
+
+      &:nth-child(4) .help__wrapper-image {
+        background-image: url("../../../assets/icons/bowls-and-cups.svg");
+      }
+
+      &:nth-child(5) .help__wrapper-image {
+        background-image: url("../../../assets/icons/shampoos.svg");
+      }
+
+      &:nth-child(6) .help__wrapper-image {
+        background-image: url("../../../assets/icons/vitamins.svg");
+      }
+
+      &:nth-child(7) .help__wrapper-image {
+        background-image: url("../../../assets/icons/medicines.svg");
+      }
+
+      &:nth-child(8) .help__wrapper-image {
+        background-image: url("../../../assets/icons/collars-or-leashes.svg");
+      }
+
+      &:nth-child(9) .help__wrapper-image {
+        background-image: url("../../../assets/icons/sleeping-area.svg");
+      }
+    }
+
+    &-image {
+      width: 60px;
+      height: 60px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+
+      @media screen and (max-width: $breakpoint-767) {
+        max-width: 50px;
+        max-height: 50px;
+      }
+    }
+
+    &-text {
+      @extend %ff-Georgia-Regular;
+      @extend %fz-h4;
+      color: $color-dark-l;
+      letter-spacing: 1px;
+      margin: 0;
+
+      @media screen and (max-width: $breakpoint-767) {
+        font-size: 15px;
+        line-height: 17px;
+      }
+    }
+  }
+}

@@ -1,0 +1,312 @@
+.header {
+  &__content {
+    display: grid;
+    grid-template-columns: 187px minmax(auto, 443px);
+    justify-content: space-between;
+    padding: 60px 40px 20px 40px;
+    gap: 20px;
+    background-image: url("../../../assets/images/noise_transparent@2x.png"),
+      radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+
+    @media screen and (max-width: $breakpoint-1279) {
+      padding: 30px 30px 20px 30px;
+    }
+
+    @media screen and (max-width: $breakpoint-767) {
+      grid-template-columns: 187px 30px;
+      padding: 31px 53px 20px 30px;
+      gap: 0px;
+    }
+
+    @media screen and (max-width: $breakpoint-374) {
+      padding: 30px 53px 20px 10px;
+    }
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: 0.5s;
+
+    &--hidden {
+      opacity: 0;
+    }
+
+    &__link {
+      cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+    }
+
+    &__title {
+      @extend %ff-Georgia-Regular;
+      @extend %fz-h1;
+      color: $color-primary;
+      margin: 0 0 9px 0;
+      letter-spacing: 2px;
+    }
+
+    &__subtitle {
+      @extend %ff-Arial-Regular;
+      @extend %fz-small-text;
+      color: $color-light-xl;
+      padding-left: 2px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .menu {
+    display: block;
+
+    @media screen and (max-width: $breakpoint-767) {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+      padding: 0;
+
+      &-item {
+        @extend %ff-Arial-Regular;
+        @extend %fz-text;
+        color: $color-dark-s;
+        cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+        transition: 0.6s;
+
+        &-pets-page {
+          @extend %ff-Arial-Regular;
+          @extend %fz-text;
+          color: $color-dark-s;
+          cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+          transition: 0.6s;
+
+          @media screen and (max-width: $breakpoint-767) {
+            font-size: 32px;
+            line-height: 51px;
+          }
+
+          &:hover {
+            color: $color-light-s;
+          }
+
+          &:after {
+            content: "";
+            width: 0%;
+            border-bottom: 3px solid $color-primary;
+            display: block;
+            position: relative;
+            transition: width 0.6s;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
+
+          &--active::after {
+            width: 100%;
+          }
+        }
+
+        &:hover {
+          color: $color-light-s;
+        }
+
+        &--active {
+          color: $color-light-s;
+        }
+
+        &:after {
+          content: "";
+          width: 0%;
+          border-bottom: 3px solid $color-primary;
+          display: block;
+          position: relative;
+          transition: width 0.6s;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        &--active::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &__burger-button {
+      display: none;
+      width: 30px;
+      height: 30px;
+      z-index: 25;
+      border: none;
+      background: none;
+      user-select: none;
+      transition: all 0.5s ease-in-out;
+      padding: 0;
+      flex-direction: column;
+      justify-self: flex-end;
+      justify-content: center;
+      align-self: center;
+      cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+
+      &--active {
+        transform: rotate(90deg);
+      }
+
+      @media screen and (max-width: $breakpoint-767) {
+        display: flex;
+      }
+    }
+
+    &__overlay {
+      @media screen and (max-width: $breakpoint-767) {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+
+        &--active {
+          display: block;
+          background-color: rgba(41, 41, 41, 0.6);
+        }
+      }
+    }
+  }
+
+  .line {
+    width: 100%;
+    height: 2px;
+    margin: 4px 0;
+    background-color: $color-primary;
+  }
+
+  .burger-menu {
+    display: none;
+    position: fixed;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 142px;
+    text-align: center;
+    background-color: $color-dark-3xl;
+    transform: translateX(100%);
+    transition: transform 0.8s;
+    width: 320px;
+    height: 100vh;
+    margin: 0;
+
+    @media screen and (max-width: $breakpoint-767) {
+      display: flex;
+    }
+
+    & > li {
+      max-width: 243px;
+    }
+
+    &--active {
+      transform: translateX(0);
+    }
+
+    &__top {
+      display: flex;
+      width: 100%;
+      padding: 31px 0 0 19px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      gap: 38px;
+      list-style-type: none;
+      align-items: center;
+
+      &-item {
+        @extend %fz-burger-menu;
+        color: $color-dark-s;
+        cursor: pointer;
+        cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+        transition: 0.6s;
+
+        &:hover {
+          color: $color-light-s;
+        }
+
+        &--active {
+          color: $color-light-s;
+        }
+
+        &:after {
+          content: "";
+          width: 0%;
+          border-bottom: 3px solid $color-primary;
+          display: block;
+          position: relative;
+          transition: width 0.6s;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        &--active::after {
+          width: 100%;
+        }
+
+        &-pets-page {
+          @extend %fz-burger-menu;
+          color: $color-dark-s;
+          cursor: pointer;
+          cursor: url("../../../assets/icons/cursor-hover.svg"), auto;
+          transition: 0.6s;
+
+          &:hover {
+            color: $color-light-s;
+          }
+
+          &:after {
+            content: "";
+            width: 0%;
+            border-bottom: 3px solid $color-primary;
+            display: block;
+            position: relative;
+            transition: width 0.6s;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
+
+          &--active::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .logo-copy {
+    display: flex;
+    flex-direction: column;
+    z-index: 25;
+    opacity: 1;
+    transition: 0.5s;
+
+    &--hidden {
+      opacity: 0;
+    }
+
+    @media screen and (max-width: $breakpoint-374) {
+      left: 3%;
+    }
+  }
+}

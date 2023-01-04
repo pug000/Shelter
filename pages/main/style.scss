@@ -1,0 +1,33 @@
+@import "./common/normalize";
+@import "./common/fonts";
+@import "./common/extends";
+@import "./common/variables";
+@import "./scss/header";
+@import "./scss/not-only";
+@import "./scss/about";
+@import "./scss/our-friends";
+@import "./scss/help";
+@import "./scss/in-addition";
+@import "./scss/footer";
+;
+
+
+:root {
+  scroll-behavior: smooth;
+}
+
+html {
+  background-color: $color-light-xl;
+  cursor: url("../../../assets/icons/cursor.svg"), auto;
+
+  a {
+    text-decoration: none;
+  }
+
+  body {
+    max-width: 1280px;
+  }
+  body.lock {
+    overflow: hidden;
+  }
+}
